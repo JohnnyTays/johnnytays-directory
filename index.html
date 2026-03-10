@@ -7,9 +7,42 @@
   <meta name="description" content="Next-level AI solutions for real-world problems.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function toggleDarkMode() {
+      const html = document.documentElement;
+      const btn = document.getElementById('darkModeBtn');
+      const isDark = html.classList.contains('dark');
+      if (isDark) {
+        html.classList.remove('dark');
+        btn.innerHTML = '🌙';
+        localStorage.setItem('darkMode', 'light');
+      } else {
+        html.classList.add('dark');
+        btn.innerHTML = '☀️';
+        localStorage.setItem('darkMode', 'dark');
+      }
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('darkMode');
+      if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        document.getElementById('darkModeBtn').innerHTML = '☀️';
+      }
+    });
+  </script>
   <style>
     .card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
     .transition { transition: all 0.3s ease; }
+    :root { --bg-primary: #020617; --text-primary: #f8fafc; }
+    .dark { --bg-primary: #f8fafc; --text-primary: #020617; }
+    body { background-color: var(--bg-primary); color: var(--text-primary); }
+    .dark body, .dark .bg-slate-950 { background-color: #f8fafc !important; }
+    .dark .card { background: linear-gradient-to-br from-slate-700 to-slate-800 !important; border-color: rgba(255,255,255,0.1); }
+    .dark header { background-color: #f8fafc/95 !important; border-color: #e2e8f0 !important; }
+    .dark .text-slate-400 { color: #64748b !important; }
+    .dark footer { background-color: #f8fafc !important; border-color: #e2e8f0 !important; }
+    .dark .border-slate-800 { border-color: #e2e8f0 !important; }
+    .dark .text-white { color: #020617 !important; }
   </style>
 </head>
 <body class="bg-slate-950 text-white min-h-screen">
@@ -23,6 +56,7 @@
             <p class="text-xs text-slate-400">Sales Pages</p>
           </div>
         </div>
+        <button id="darkModeBtn" onclick="toggleDarkMode()" class="text-2xl p-2 rounded-full hover:bg-slate-800 transition">🌙</button>
       </div>
     </div>
   </header>
@@ -36,7 +70,7 @@
 
   <section class="py-12 px-4 pb-24">
     <div class="max-w-6xl mx-auto">
-     grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         
         <a href="https://johnnytays.github.io/aimagic-landing/" class="card block bg-gradient-to-br from-yellow-600 to-yellow-800 rounded-2xl p-6 border border-yellow-500/30 transition">
           <div class="text-5xl mb-4">✨</div>
