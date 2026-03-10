@@ -4,421 +4,364 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JohnnyTays - AI Solutions</title>
-  <meta name="description" content="Next-level AI solutions for real-world problems.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+  <meta name="description" content="37 AI-powered tools designed to solve real problems.">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    function toggleDarkMode() {
-      const html = document.documentElement;
-      const btn = document.getElementById('darkModeBtn');
-      const isDark = html.classList.contains('dark');
-      if (isDark) {
-        html.classList.remove('dark');
-        btn.innerHTML = '🌙';
-        localStorage.setItem('darkMode', 'light');
-      } else {
-        html.classList.add('dark');
-        btn.innerHTML = '☀️';
-        localStorage.setItem('darkMode', 'dark');
-      }
-    }
-    document.addEventListener('DOMContentLoaded', () => {
-      const saved = localStorage.getItem('darkMode');
-      if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
-        document.getElementById('darkModeBtn').innerHTML = '☀️';
-      }
-    });
-  </script>
   <style>
-    .card { position: relative; }
+    :root { --bg-primary: #0f172a; }
+    body { background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%); min-height: 100vh; }
+    .card { position: relative; transition: all 0.3s ease; }
     .card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
-    .transition { transition: all 0.3s ease; }
-    :root { --bg-primary: #020617; --text-primary: #f8fafc; }
-    .dark { --bg-primary: #f8fafc; --text-primary: #020617; }
-    body { background-color: var(--bg-primary); color: var(--text-primary); }
-    .dark body, .dark .bg-slate-950 { background-color: #f8fafc !important; }
-    .dark .card { background: linear-gradient-to-br from-slate-700 to-slate-800 !important; border-color: rgba(255,255,255,0.1); }
-    .dark header { background-color: #f8fafc/95 !important; border-color: #e2e8f0 !important; }
-    .dark .text-slate-400 { color: #64748b !important; }
-    .dark footer { background-color: #f8fafc !important; border-color: #e2e8f0 !important; }
-    .dark .border-slate-800 { border-color: #e2e8f0 !important; }
-    .dark .text-white { color: #020617 !important; }
-    /* Header always stays dark with white text */
-    header { background-color: #020617 !important; border-color: #1e293b !important; }
-    header h1 { color: #ffffff !important; }
-    header p { color: #cbd5e1 !important; }
+    .category-nav { scrollbar-width: none; -ms-overflow-style: none; }
+    .category-nav::-webkit-scrollbar { display: none; }
+    .glow { box-shadow: 0 0 30px rgba(99, 102, 241, 0.2); }
   </style>
 </head>
-<body class="bg-slate-950 text-white min-h-screen">
-  <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-md border-b border-slate-800">
-    <div class="max-w-6xl mx-auto px-4 py-4">
+<body class="text-white">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-700">
+    <div class="max-w-7xl mx-auto px-4 py-4">
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-3">
           <span class="text-3xl">🚀</span>
           <div>
             <h1 class="text-xl font-bold">JohnnyTays</h1>
-            <p class="text-xs text-slate-400">Sales Pages</p>
+            <p class="text-xs text-slate-400">AI Solutions</p>
           </div>
         </div>
-        <button id="darkModeBtn" onclick="toggleDarkMode()" class="text-2xl p-2 rounded-full hover:bg-slate-800 transition">🌙</button>
+        <div class="flex gap-6 text-sm">
+          <span class="text-indigo-400 font-semibold">37 Products</span>
+        </div>
       </div>
     </div>
-  </header>
+  </nav>
 
-  <section class="pt-32 pb-20 px-4">
+  <section class="pt-32 pb-12 px-4">
     <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-4xl md:text-6xl font-bold mb-6">Next-Level <span class="text-indigo-400">AI Solutions</span></h2>
-      <p class="text-xl text-slate-400">Powerful tools designed to solve real problems.</p>
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Next-Level <span class="text-indigo-400">AI Solutions</span></h1>
+      <p class="text-xl text-slate-400">37 powerful tools designed to solve real problems.</p>
+    </div>
+  </section>
+
+  <!-- Category Navigation -->
+  <section class="px-4 pb-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="category-nav flex flex-wrap gap-3 justify-center">
+        <button onclick="filterCategory('all')" class="category-btn active bg-indigo-500/20 border border-indigo-500/50 text-indigo-300 px-4 py-2 rounded-full text-sm font-semibold hover:bg-indigo-500/30 transition" data-category="all">All (37)</button>
+        <button onclick="filterCategory('business')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-4 py-2 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="business">Business (10)</button>
+        <button onclick="filterCategory('life')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-4 py-2 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="life">Life (5)</button>
+        <button onclick="filterCategory('education')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-4 py-2 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="education">Education (3)</button>
+        <button onclick="filterCategory('commerce')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-4 py-2 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="commerce">Resale/Commerce (4)</button>
+        <button onclick="filterCategory('productivity')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-4 py-2 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="productivity">Productivity (5)</button>
+        <button onclick="filterCategory('realestate')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-4 py-2 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="realestate">Real Estate (3)</button>
+        <button onclick="filterCategory('nature')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-4 py-2 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="nature">Nature (3)</button>
+        <button onclick="filterCategory('detection')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-4 py-2 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="detection">Detection (2)</button>
+        <button onclick="filterCategory('utility')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-4 py-2 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="utility">Utility (2)</button>
+      </div>
     </div>
   </section>
 
   <section class="py-12 px-4 pb-24">
-    <div class="max-w-6xl mx-auto">
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">1</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">1</div>
-        <a href="https://johnnytays.github.io/adaptive-task-landing/" class="card block bg-gradient-to-br from-amber-600 to-amber-800 rounded-2xl p-6 border border-amber-500/30 transition">
-          <div class="text-5xl mb-4">⚡</div>
-          <h4 class="text-xl font-bold text-white mb-3">Adaptive Task Engine</h4>
-          <p class="text-amber-200 text-sm leading-relaxed">AI workflows — task ingestion, decomposition, smart scheduling & real-time analysis.</p>
-          <div class="mt-4 text-amber-300 text-sm font-semibold">Click to explore →</div>
+    <div class="max-w-7xl mx-auto">
+      <div id="products-grid" class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+        <!-- BUSINESS (10) -->
+        <a href="https://johnnytays.github.io/ebomp-landing/" class="card block bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-6 border border-blue-500/30 transition" data-category="business">
+          <div class="absolute top-3 right-3 text-xs font-bold text-blue-200/50">#1</div>
+          <div class="text-4xl mb-4">📊</div>
+          <h4 class="text-lg font-bold text-white mb-2">eBOMP</h4>
+          <p class="text-blue-200 text-sm">Executive business operations — AI command center for strategic growth & operational control.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">2</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">2</div>
-        <a href="https://johnnytays.github.io/aimagic-landing/" class="card block bg-gradient-to-br from-yellow-600 to-yellow-800 rounded-2xl p-6 border border-yellow-500/30 transition">
-          <div class="text-5xl mb-4">🎩</div>
-          <h4 class="text-xl font-bold text-white mb-3">AI Magic Mentor</h4>
-          <p class="text-yellow-200 text-sm leading-relaxed">AI-powered magic tricks with method, patter & performance coaching.</p>
-          <div class="mt-4 text-yellow-300 text-sm font-semibold">Click to explore →</div>
+        <a href="https://johnnytays.github.io/executive-intelligence-landing/" class="card block bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-6 border border-blue-500/30 transition" data-category="business">
+          <div class="absolute top-3 right-3 text-xs font-bold text-blue-200/50">#2</div>
+          <div class="text-4xl mb-4">🎯</div>
+          <h4 class="text-lg font-bold text-white mb-2">Executive Intelligence</h4>
+          <p class="text-blue-200 text-sm">Strategic decision support — 4-stage cognitive pipeline for executive analysis.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">3</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">3</div>
-        <a href="https://johnnytays.github.io/calcalc-ai-landing/" class="card block bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-6 border border-green-500/30 transition">
-          <div class="text-5xl mb-4">🥗</div>
-          <h4 class="text-xl font-bold text-white mb-3">CalCalc AI</h4>
-          <p class="text-green-200 text-sm leading-relaxed">AI meal planning — scan your fridge, get personalized fitness recipes.</p>
-          <div class="mt-4 text-green-300 text-sm font-semibold">Click to explore →</div>
+        <a href="https://johnnytays.github.io/product-architect/" class="card block bg-gradient-to-br from-indigo-600 to-indigo-800 rounded-2xl p-6 border border-indigo-500/30 transition" data-category="business">
+          <div class="absolute top-3 right-3 text-xs font-bold text-indigo-200/50">#3</div>
+          <div class="text-4xl mb-4">🏗️</div>
+          <h4 class="text-lg font-bold text-white mb-2">Product Architect</h4>
+          <p class="text-indigo-200 text-sm">Transform ideas into investor-ready business blueprints.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">4</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">4</div>
-        <a href="https://johnnytays.github.io/catercalc-landing/" class="card block bg-gradient-to-br from-amber-600 to-amber-800 rounded-2xl p-6 border border-amber-500/30 transition">
-          <div class="text-5xl mb-4">🚚</div>
-          <h4 class="text-xl font-bold text-white mb-3">CaterCalc</h4>
-          <p class="text-amber-200 text-sm leading-relaxed">AI catering quotes, shopping lists & profit analysis in minutes.</p>
-          <div class="mt-4 text-amber-300 text-sm font-semibold">Click to explore →</div>
+        <a href="https://johnnytays.github.io/proptech-intelligence-landing/" class="card block bg-gradient-to-br from-slate-600 to-slate-800 rounded-2xl p-6 border border-slate-500/30 transition" data-category="business">
+          <div class="absolute top-3 right-3 text-xs font-bold text-slate-200/50">#4</div>
+          <div class="text-4xl mb-4">🏢</div>
+          <h4 class="text-lg font-bold text-white mb-2">PropTech Intelligence</h4>
+          <p class="text-slate-200 text-sm">Enterprise real estate — AI market analysis, risk modeling & ROI forecasts.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">5</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">5</div>
-        <a href="https://johnnytays.github.io/cognitive-learning-landing/" class="card block bg-gradient-to-br from-indigo-600 to-indigo-800 rounded-2xl p-6 border border-indigo-500/30 transition">
-          <div class="text-5xl mb-4">🧠</div>
-          <h4 class="text-xl font-bold text-white mb-3">Cognitive Learning Compression</h4>
-          <p class="text-indigo-200 text-sm leading-relaxed">AI learning engine — transform any subject into personalized study in minutes.</p>
-          <div class="mt-4 text-indigo-300 text-sm font-semibold">Click to explore →</div>
+        <a href="https://johnnytays.github.io/pipeline-genesis-landing/" class="card block bg-gradient-to-br from-cyan-600 to-cyan-800 rounded-2xl p-6 border border-cyan-500/30 transition" data-category="business">
+          <div class="absolute top-3 right-3 text-xs font-bold text-cyan-200/50">#5</div>
+          <div class="text-4xl mb-4">🔗</div>
+          <h4 class="text-lg font-bold text-white mb-2">Pipeline Genesis</h4>
+          <p class="text-cyan-200 text-sm">AI customer intelligence — transform product ideas into sales strategy.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">6</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">6</div>
-        <a href="https://johnnytays.github.io/dating-intelligence-engine-landing/" class="card block bg-gradient-to-br from-pink-600 to-pink-800 rounded-2xl p-6 border border-pink-500/30 transition">
-          <div class="text-5xl mb-4">💕</div>
-          <h4 class="text-xl font-bold text-white mb-3">Dating Intelligence Engine</h4>
-          <p class="text-pink-200 text-sm leading-relaxed">AI conversation optimization — psychological profiling & message optimization for dating.</p>
-          <div class="mt-4 text-pink-300 text-sm font-semibold">Click to explore →</div>
+        <a href="https://johnnytays.github.io/seo-genius-pro-landing/" class="card block bg-gradient-to-br from-cyan-600 to-cyan-800 rounded-2xl p-6 border border-cyan-500/30 transition" data-category="business">
+          <div class="absolute top-3 right-3 text-xs font-bold text-cyan-200/50">#6</div>
+          <div class="text-4xl mb-4">🧠</div>
+          <h4 class="text-lg font-bold text-white mb-2">SEO Genius Pro</h4>
+          <p class="text-cyan-200 text-sm">Enterprise SEO intelligence — 21-category analysis with ROI modeling.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">7</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">7</div>
-        <a href="https://johnnytays.github.io/clarityscan-ai-landing/" class="card block bg-gradient-to-br from-violet-600 to-violet-800 rounded-2xl p-6 border border-violet-500/30 transition">
-          <div class="text-5xl mb-4">🔍</div>
-          <h4 class="text-xl font-bold text-white mb-3">ClarityScan AI</h4>
-          <p class="text-violet-200 text-sm leading-relaxed">Neural space intelligence — 4-stage AI pipeline for asset analysis & real-time valuation.</p>
-          <div class="mt-4 text-violet-300 text-sm font-semibold">Click to explore →</div>
+        <a href="https://johnnytays.github.io/socialgenius-pro-landing/" class="card block bg-gradient-to-br from-sky-600 to-sky-800 rounded-2xl p-6 border border-sky-500/30 transition" data-category="business">
+          <div class="absolute top-3 right-3 text-xs font-bold text-sky-200/50">#7</div>
+          <div class="text-4xl mb-4">📊</div>
+          <h4 class="text-lg font-bold text-white mb-2">SocialGenius Pro</h4>
+          <p class="text-sky-200 text-sm">Enterprise social media intelligence — 25+ categories, trend synthesis.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">8</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">8</div>
-        <a href="https://johnnytays.github.io/ebomp-landing/" class="card block bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-6 border border-blue-500/30 transition">
-          <div class="text-5xl mb-4">📊</div>
-          <h4 class="text-xl font-bold text-white mb-3">eBOMP</h4>
-          <p class="text-blue-200 text-sm leading-relaxed">Executive business operations — AI command center for strategic growth & operational control.</p>
-          <div class="mt-4 text-blue-300 text-sm font-semibold">Click to explore →</div>
+        <a href="https://johnnytays.github.io/youtube-growth-pro-landing/" class="card block bg-gradient-to-br from-red-600 to-red-800 rounded-2xl p-6 border border-red-500/30 transition" data-category="business">
+          <div class="absolute top-3 right-3 text-xs font-bold text-red-200/50">#8</div>
+          <div class="text-4xl mb-4">📺</div>
+          <h4 class="text-lg font-bold text-white mb-2">YouTube Growth Pro</h4>
+          <p class="text-red-200 text-sm">Enterprise YouTube intelligence — viral patterns & revenue modeling.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">9</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">9</div>
-        <a href="https://johnnytays.github.io/executive-intelligence-landing/" class="card block bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-6 border border-blue-500/30 transition">
-          <div class="text-5xl mb-4">🎯</div>
-          <h4 class="text-xl font-bold text-white mb-3">Executive Intelligence</h4>
-          <p class="text-blue-200 text-sm leading-relaxed">Strategic decision support — 4-stage cognitive pipeline for executive analysis.</p>
-          <div class="mt-4 text-blue-300 text-sm font-semibold">Click to explore →</div>
+        <a href="https://johnnytays.github.io/fitness-business-optimizer-landing/" class="card block bg-gradient-to-br from-red-600 to-red-800 rounded-2xl p-6 border border-red-500/30 transition" data-category="business">
+          <div class="absolute top-3 right-3 text-xs font-bold text-red-200/50">#9</div>
+          <div class="text-4xl mb-4">💪</div>
+          <h4 class="text-lg font-bold text-white mb-2">Fitness Business Optimizer</h4>
+          <p class="text-red-200 text-sm">AI growth strategy for gyms — 20+ analysis categories.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">10</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">10</div>
-        <a href="https://johnnytays.github.io/fitness-business-optimizer-landing/" class="card block bg-gradient-to-br from-red-600 to-red-800 rounded-2xl p-6 border border-red-500/30 transition">
-          <div class="text-5xl mb-4">💪</div>
-          <h4 class="text-xl font-bold text-white mb-3">Fitness Business Optimizer</h4>
-          <p class="text-red-200 text-sm leading-relaxed">AI growth strategy for gyms & fitness studios — 20+ analysis categories.</p>
-          <div class="mt-4 text-red-300 text-sm font-semibold">Click to explore →</div>
+        <a href="https://johnnytays.github.io/re-marketing-diagnostician-landing/" class="card block bg-gradient-to-br from-orange-600 to-orange-800 rounded-2xl p-6 border border-orange-500/30 transition" data-category="business">
+          <div class="absolute top-3 right-3 text-xs font-bold text-orange-200/50">#10</div>
+          <div class="text-4xl mb-4">🏠</div>
+          <h4 class="text-lg font-bold text-white mb-2">RE Marketing Diagnostician</h4>
+          <p class="text-orange-200 text-sm">AI marketing audit for real estate — 20 categories, competitive benchmarking.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">11</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">11</div>
-        <a href="https://johnnytays.github.io/fixgenius-landing/" class="card block bg-gradient-to-br from-amber-600 to-amber-800 rounded-2xl p-6 border border-amber-500/30 transition">
-          <div class="text-5xl mb-4">🔧</div>
-          <h4 class="text-xl font-bold text-white mb-3">FixGenius Universal</h4>
-          <p class="text-amber-200 text-sm leading-relaxed">Upload a photo of anything broken — get instant repair instructions & cost estimates.</p>
-          <div class="mt-4 text-amber-300 text-sm font-semibold">Click to explore →</div>
+        <!-- LIFE (5) -->
+        <a href="https://johnnytays.github.io/life-optimizer-landing/" class="card block bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-6 border border-green-500/30 transition" data-category="life">
+          <div class="absolute top-3 right-3 text-xs font-bold text-green-200/50">#11</div>
+          <div class="text-4xl mb-4">🧠</div>
+          <h4 class="text-lg font-bold text-white mb-2">LifeOptimizer</h4>
+          <p class="text-green-200 text-sm">AI life optimization — meal planning, cleaning, fitness, finance.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">12</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">12</div>
-        <a href="https://johnnytays.github.io/flipgenius-landing/" class="card block bg-gradient-to-br from-emerald-600 to-emerald-800 rounded-2xl p-6 border border-emerald-500/30 transition">
-          <div class="text-5xl mb-4">💰</div>
-          <h4 class="text-xl font-bold text-white mb-3">FlipGenius</h4>
-          <p class="text-emerald-200 text-sm leading-relaxed">Point your phone at any item — AI reveals hidden resale profit potential.</p>
-          <div class="mt-4 text-emerald-300 text-sm font-semibold">Click to explore →</div>
+        <a href="https://johnnytays.github.io/lifeflow-dynamics-landing/" class="card block bg-gradient-to-br from-teal-600 to-teal-800 rounded-2xl p-6 border border-teal-500/30 transition" data-category="life">
+          <div class="absolute top-3 right-3 text-xs font-bold text-teal-200/50">#12</div>
+          <div class="text-4xl mb-4">🌊</div>
+          <h4 class="text-lg font-bold text-white mb-2">LifeFlow Dynamics</h4>
+          <p class="text-teal-200 text-sm">AI process optimization — map complexity & forge efficient pathways.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">13</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">13</div>
-        <a href="https://johnnytays.github.io/flipsnap-landing/" class="card block bg-gradient-to-br from-orange-600 to-orange-800 rounded-2xl p-6 border border-orange-500/30 transition">
-          <div class="text-5xl mb-4">📸</div>
-          <h4 class="text-xl font-bold text-white mb-3">FlipSnap</h4>
-          <p class="text-orange-200 text-sm leading-relaxed">Snap a photo, get instant valuations & auto-generated listings for 17+ marketplaces.</p>
-          <div class="mt-4 text-orange-300 text-sm font-semibold">Click to explore →</div>
+        <a href="https://johnnytays.github.io/lifepath-universal-landing/" class="card block bg-gradient-to-br from-purple-600 to-purple-800 rounded-2xl p-6 border border-purple-500/30 transition" data-category="life">
+          <div class="absolute top-3 right-3 text-xs font-bold text-purple-200/50">#13</div>
+          <div class="text-4xl mb-4">🧭</div>
+          <h4 class="text-lg font-bold text-white mb-2">LifePath Universal</h4>
+          <p class="text-purple-200 text-sm">AI strategic decisions — game theory, risk analysis & outcome prediction.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">14</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">14</div>
-        <a href="https://johnnytays.github.io/gardengenius-landing/" class="card block bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-6 border border-green-500/30 transition">
-          <div class="text-5xl mb-4">🌱</div>
-          <h4 class="text-xl font-bold text-white mb-3">GardenGenius</h4>
-          <p class="text-green-200 text-sm leading-relaxed">Upload a garden photo — get scientific planting schedules & 90-day growth plans.</p>
-          <div class="mt-4 text-green-300 text-sm font-semibold">Click to explore →</div>
+        <a href="https://johnnytays.github.io/lovesync-intelligence-landing/" class="card block bg-gradient-to-br from-pink-600 to-pink-800 rounded-2xl p-6 border border-pink-500/30 transition" data-category="life">
+          <div class="absolute top-3 right-3 text-xs font-bold text-pink-200/50">#14</div>
+          <div class="text-4xl mb-4">💝</div>
+          <h4 class="text-lg font-bold text-white mb-2">LoveSync Intelligence</h4>
+          <p class="text-pink-200 text-sm">AI relationship intelligence — behavioral pattern analysis.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">15</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">15</div>
-        <a href="https://johnnytays.github.io/gamemaster-ai-landing/" class="card block bg-gradient-to-br from-red-600 to-red-800 rounded-2xl p-6 border border-red-500/30 transition">
-          <div class="text-5xl mb-4">🎮</div>
-          <h4 class="text-xl font-bold text-white mb-3">GameMaster AI</h4>
-          <p class="text-red-200 text-sm leading-relaxed">Real-time tactical analysis for ANY game — FPS, fighting, MOBA, racing & more.</p>
-          <div class="mt-4 text-red-300 text-sm font-semibold">Click to explore →</div>
+        <a href="https://johnnytays.github.io/dating-intelligence-engine-landing/" class="card block bg-gradient-to-br from-pink-600 to-pink-800 rounded-2xl p-6 border border-pink-500/30 transition" data-category="life">
+          <div class="absolute top-3 right-3 text-xs font-bold text-pink-200/50">#15</div>
+          <div class="text-4xl mb-4">💕</div>
+          <h4 class="text-lg font-bold text-white mb-2">Dating Intelligence Engine</h4>
+          <p class="text-pink-200 text-sm">AI conversation optimization — psychological profiling.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">16</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">16</div>
-        <a href="https://johnnytays.github.io/junksnap-landing/" class="card block bg-gradient-to-br from-red-600 to-red-800 rounded-2xl p-6 border border-red-500/30 transition">
-          <div class="text-5xl mb-4">🚛</div>
-          <h4 class="text-xl font-bold text-white mb-3">JunkSnap AI</h4>
-          <p class="text-red-200 text-sm leading-relaxed">AI job management for junk removal — photo estimates, route optimization & invoicing.</p>
-          <div class="mt-4 text-red-300 text-sm font-semibold">Click to explore →</div>
+        <!-- EDUCATION (3) -->
+        <a href="https://johnnytays.github.io/cognitive-learning-landing/" class="card block bg-gradient-to-br from-indigo-600 to-indigo-800 rounded-2xl p-6 border border-indigo-500/30 transition" data-category="education">
+          <div class="absolute top-3 right-3 text-xs font-bold text-indigo-200/50">#16</div>
+          <div class="text-4xl mb-4">🧠</div>
+          <h4 class="text-lg font-bold text-white mb-2">Cognitive Learning</h4>
+          <p class="text-indigo-200 text-sm">AI learning engine — transform any subject into personalized study.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">17</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">17</div>
-        <a href="https://johnnytays.github.io/lifeflow-dynamics-landing/" class="card block bg-gradient-to-br from-sky-600 to-sky-800 rounded-2xl p-6 border border-sky-500/30 transition">
-          <div class="text-5xl mb-4">🌊</div>
-          <h4 class="text-xl font-bold text-white mb-3">LifeFlow Dynamics</h4>
-          <p class="text-sky-200 text-sm leading-relaxed">AI process optimization — map complexity, identify bottlenecks & forge efficient pathways.</p>
-          <div class="mt-4 text-sky-300 text-sm font-semibold">Click to explore →</div>
+        <a href="https://johnnytays.github.io/skillhacker-landing/" class="card block bg-gradient-to-br from-violet-600 to-violet-800 rounded-2xl p-6 border border-violet-500/30 transition" data-category="education">
+          <div class="absolute top-3 right-3 text-xs font-bold text-violet-200/50">#17</div>
+          <div class="text-4xl mb-4">🚀</div>
+          <h4 class="text-lg font-bold text-white mb-2">SkillHacker</h4>
+          <p class="text-violet-200 text-sm">Neural acceleration — master any skill 10x faster.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">18</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">18</div>
-        <a href="https://johnnytays.github.io/lifepath-universal-landing/" class="card block bg-gradient-to-br from-purple-600 to-purple-800 rounded-2xl p-6 border border-purple-500/30 transition">
-          <div class="text-5xl mb-4">🧭</div>
-          <h4 class="text-xl font-bold text-white mb-3">LifePath Universal</h4>
-          <p class="text-purple-200 text-sm leading-relaxed">AI strategic decisions — game theory, risk analysis & outcome prediction for life choices.</p>
-          <div class="mt-4 text-purple-300 text-sm font-semibold">Click to explore →</div>
+        <a href="https://johnnytays.github.io/aimagic-landing/" class="card block bg-gradient-to-br from-yellow-600 to-yellow-800 rounded-2xl p-6 border border-yellow-500/30 transition" data-category="education">
+          <div class="absolute top-3 right-3 text-xs font-bold text-yellow-200/50">#18</div>
+          <div class="text-4xl mb-4">🎩</div>
+          <h4 class="text-lg font-bold text-white mb-2">AI Magic Mentor</h4>
+          <p class="text-yellow-200 text-sm">AI-powered magic tricks with method, patter & performance coaching.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">19</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">19</div>
-        <a href="https://johnnytays.github.io/life-optimizer-landing/" class="card block bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-6 border border-green-500/30 transition">
-          <div class="text-5xl mb-4">🧠</div>
-          <h4 class="text-xl font-bold text-white mb-3">LifeOptimizer</h4>
-          <p class="text-green-200 text-sm leading-relaxed">AI life optimization — meal planning, cleaning, fitness, finance & more.</p>
-          <div class="mt-4 text-green-300 text-sm font-semibold">Click to explore →</div>
+        <!-- RESALE/COMMERCE (4) -->
+        <a href="https://johnnytays.github.io/flipgenius-landing/" class="card block bg-gradient-to-br from-emerald-600 to-emerald-800 rounded-2xl p-6 border border-emerald-500/30 transition" data-category="commerce">
+          <div class="absolute top-3 right-3 text-xs font-bold text-emerald-200/50">#19</div>
+          <div class="text-4xl mb-4">💰</div>
+          <h4 class="text-lg font-bold text-white mb-2">FlipGenius</h4>
+          <p class="text-emerald-200 text-sm">Point phone at any item — AI reveals resale profit potential.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">20</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">20</div>
-        <a href="https://johnnytays.github.io/lovesync-intelligence-landing/" class="card block bg-gradient-to-br from-pink-600 to-pink-800 rounded-2xl p-6 border border-pink-500/30 transition">
-          <div class="text-5xl mb-4">💝</div>
-          <h4 class="text-xl font-bold text-white mb-3">LoveSync Intelligence</h4>
-          <p class="text-pink-200 text-sm leading-relaxed">AI relationship intelligence — behavioral pattern analysis & compatibility insights.</p>
-          <div class="mt-4 text-pink-300 text-sm font-semibold">Click to explore →</div>
+        <a href="https://johnnytays.github.io/flipsnap-landing/" class="card block bg-gradient-to-br from-orange-600 to-orange-800 rounded-2xl p-6 border border-orange-500/30 transition" data-category="commerce">
+          <div class="absolute top-3 right-3 text-xs font-bold text-orange-200/50">#20</div>
+          <div class="text-4xl mb-4">📸</div>
+          <h4 class="text-lg font-bold text-white mb-2">FlipSnap</h4>
+          <p class="text-orange-200 text-sm">Snap a photo, get instant valuations & auto-generated listings.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">21</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">21</div>
-        <a href="https://johnnytays.github.io/naturalistpro-landing/" class="card block bg-gradient-to-br from-teal-600 to-teal-800 rounded-2xl p-6 border border-teal-500/30 transition">
-          <div class="text-5xl mb-4">🔬</div>
-          <h4 class="text-xl font-bold text-white mb-3">NaturalistPro</h4>
-          <p class="text-teal-200 text-sm leading-relaxed">Research-grade species identification — flora, fauna, fungi & microorganisms.</p>
-          <div class="mt-4 text-teal-300 text-sm font-semibold">Click to explore →</div>
+        <a href="https://johnnytays.github.io/fixgenius-landing/" class="card block bg-gradient-to-br from-amber-600 to-amber-800 rounded-2xl p-6 border border-amber-500/30 transition" data-category="commerce">
+          <div class="absolute top-3 right-3 text-xs font-bold text-amber-200/50">#21</div>
+          <div class="text-4xl mb-4">🔧</div>
+          <h4 class="text-lg font-bold text-white mb-2">FixGenius Universal</h4>
+          <p class="text-amber-200 text-sm">Upload a photo of anything broken — get repair instructions.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">22</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">22</div>
-        <a href="https://johnnytays.github.io/pipeline-genesis-landing/" class="card block bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-6 border border-green-500/30 transition">
-          <div class="text-5xl mb-4">🔗</div>
-          <h4 class="text-xl font-bold text-white mb-3">Pipeline Genesis</h4>
-          <p class="text-green-200 text-sm leading-relaxed">AI customer intelligence — transform product ideas into sales strategy & market analysis.</p>
-          <div class="mt-4 text-green-300 text-sm font-semibold">Click to explore →</div>
+        <a href="https://johnnytays.github.io/catercalc-landing/" class="card block bg-gradient-to-br from-amber-600 to-amber-800 rounded-2xl p-6 border border-amber-500/30 transition" data-category="commerce">
+          <div class="absolute top-3 right-3 text-xs font-bold text-amber-200/50">#22</div>
+          <div class="text-4xl mb-4">🚚</div>
+          <h4 class="text-lg font-bold text-white mb-2">CaterCalc</h4>
+          <p class="text-amber-200 text-sm">AI catering quotes, shopping lists & profit analysis.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">23</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">23</div>
-        <a href="https://johnnytays.github.io/plantnostic-landing/" class="card block bg-gradient-to-br from-lime-600 to-lime-800 rounded-2xl p-6 border border-lime-500/30 transition">
-          <div class="text-5xl mb-4">🌿</div>
-          <h4 class="text-xl font-bold text-white mb-3">PlantNostic AI</h4>
-          <p class="text-lime-200 text-sm leading-relaxed">AI plant doctor — identify species, diagnose diseases & get care plans.</p>
-          <div class="mt-4 text-lime-300 text-sm font-semibold">Click to explore →</div>
+        <!-- PRODUCTIVITY (5) -->
+        <a href="https://johnnytays.github.io/adaptive-task-landing/" class="card block bg-gradient-to-br from-amber-600 to-amber-800 rounded-2xl p-6 border border-amber-500/30 transition" data-category="productivity">
+          <div class="absolute top-3 right-3 text-xs font-bold text-amber-200/50">#23</div>
+          <div class="text-4xl mb-4">⚡</div>
+          <h4 class="text-lg font-bold text-white mb-2">Adaptive Task Engine</h4>
+          <p class="text-amber-200 text-sm">AI workflows — task ingestion, decomposition, smart scheduling.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">24</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">24</div>
-        <a href="https://johnnytays.github.io/polaris-insight/" class="card block bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-6 border border-blue-500/30 transition">
-          <div class="text-5xl mb-4">🧭</div>
-          <h4 class="text-xl font-bold text-white mb-3">Polaris Insight</h4>
-          <p class="text-blue-200 text-sm leading-relaxed">AI that forces Thesis vs Antithesis — balanced, verified insights with sources.</p>
-          <div class="mt-4 text-blue-300 text-sm font-semibold">Click to explore →</div>
+        <a href="https://johnnytays.github.io/promptgenie-landing/" class="card block bg-gradient-to-br from-purple-600 to-purple-800 rounded-2xl p-6 border border-purple-500/30 transition" data-category="productivity">
+          <div class="absolute top-3 right-3 text-xs font-bold text-purple-200/50">#24</div>
+          <div class="text-4xl mb-4">🧞</div>
+          <h4 class="text-lg font-bold text-white mb-2">PromptGenie</h4>
+          <p class="text-purple-200 text-sm">Transform basic prompts into mathematically optimized instructions.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">25</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">25</div>
-        <a href="https://johnnytays.github.io/product-architect/" class="card block bg-gradient-to-br from-violet-600 to-violet-800 rounded-2xl p-6 border border-violet-500/30 transition">
-          <div class="text-5xl mb-4">🏗️</div>
-          <h4 class="text-xl font-bold text-white mb-3">Product Architect</h4>
-          <p class="text-violet-200 text-sm leading-relaxed">Transform ideas into investor-ready business blueprints — market analysis, tech stack & pitch deck.</p>
-          <div class="mt-4 text-violet-300 text-sm font-semibold">Click to explore →</div>
+        <a href="https://johnnytays.github.io/quantum-flip-landing/" class="card block bg-gradient-to-br from-indigo-600 to-indigo-800 rounded-2xl p-6 border border-indigo-500/30 transition" data-category="productivity">
+          <div class="absolute top-3 right-3 text-xs font-bold text-indigo-200/50">#25</div>
+          <div class="text-4xl mb-4">⚛️</div>
+          <h4 class="text-lg font-bold text-white mb-2">Quantum Flip</h4>
+          <p class="text-indigo-200 text-sm">AI that understands physics, not just prices — equipment valuation.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">26</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">26</div>
-        <a href="https://johnnytays.github.io/proptech-intelligence-landing/" class="card block bg-gradient-to-br from-cyan-600 to-cyan-800 rounded-2xl p-6 border border-cyan-500/30 transition">
-          <div class="text-5xl mb-4">🏢</div>
-          <h4 class="text-xl font-bold text-white mb-3">PropTech Intelligence</h4>
-          <p class="text-cyan-200 text-sm leading-relaxed">Enterprise real estate — AI market analysis, risk modeling & ROI forecasts.</p>
-          <div class="mt-4 text-cyan-300 text-sm font-semibold">Click to explore →</div>
+        <a href="https://johnnytays.github.io/polaris-insight/" class="card block bg-gradient-to-br from-slate-600 to-slate-800 rounded-2xl p-6 border border-slate-500/30 transition" data-category="productivity">
+          <div class="absolute top-3 right-3 text-xs font-bold text-slate-200/50">#26</div>
+          <div class="text-4xl mb-4">🧭</div>
+          <h4 class="text-lg font-bold text-white mb-2">Polaris Insight</h4>
+          <p class="text-slate-200 text-sm">AI that forces Thesis vs Antithesis — balanced, verified insights.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">27</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">27</div>
-        <a href="https://johnnytays.github.io/promptgenie-landing/" class="card block bg-gradient-to-br from-indigo-600 to-indigo-800 rounded-2xl p-6 border border-indigo-500/30 transition">
-          <div class="text-5xl mb-4">🧞</div>
-          <h4 class="text-xl font-bold text-white mb-3">PromptGenie</h4>
-          <p class="text-indigo-200 text-sm leading-relaxed">Transform basic prompts into mathematically optimized, multi-layered AI instructions.</p>
-          <div class="mt-4 text-indigo-300 text-sm font-semibold">Click to explore →</div>
+        <a href="https://johnnytays.github.io/calcalc-ai-landing/" class="card block bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-6 border border-green-500/30 transition" data-category="productivity">
+          <div class="absolute top-3 right-3 text-xs font-bold text-green-200/50">#27</div>
+          <div class="text-4xl mb-4">🥗</div>
+          <h4 class="text-lg font-bold text-white mb-2">CalCalc AI</h4>
+          <p class="text-green-200 text-sm">AI meal planning — scan your fridge, get personalized recipes.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">28</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">28</div>
-        <a href="https://johnnytays.github.io/quantum-flip-landing/" class="card block bg-gradient-to-br from-purple-600 to-purple-800 rounded-2xl p-6 border border-purple-500/30 transition">
-          <div class="text-5xl mb-4">⚛️</div>
-          <h4 class="text-xl font-bold text-white mb-3">Quantum Flip</h4>
-          <p class="text-purple-200 text-sm leading-relaxed">AI that understands physics, not just prices — industrial equipment valuation.</p>
-          <div class="mt-4 text-purple-300 text-sm font-semibold">Click to explore →</div>
+        <!-- REAL ESTATE (3) -->
+        <a href="https://johnnytays.github.io/clarityscan-ai-landing/" class="card block bg-gradient-to-br from-violet-600 to-violet-800 rounded-2xl p-6 border border-violet-500/30 transition" data-category="realestate">
+          <div class="absolute top-3 right-3 text-xs font-bold text-violet-200/50">#28</div>
+          <div class="text-4xl mb-4">🔍</div>
+          <h4 class="text-lg font-bold text-white mb-2">ClarityScan AI</h4>
+          <p class="text-violet-200 text-sm">Neural space intelligence — 4-stage AI pipeline for asset analysis.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">29</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">29</div>
-        <a href="https://johnnytays.github.io/re-marketing-diagnostician-landing/" class="card block bg-gradient-to-br from-sky-600 to-sky-800 rounded-2xl p-6 border border-sky-500/30 transition">
-          <div class="text-5xl mb-4">🏠</div>
-          <h4 class="text-xl font-bold text-white mb-3">RE Marketing Diagnostician</h4>
-          <p class="text-sky-200 text-sm leading-relaxed">AI marketing audit for real estate — 20 categories, competitive benchmarking & ROI roadmap.</p>
-          <div class="mt-4 text-sky-300 text-sm font-semibold">Click to explore →</div>
+        <a href="https://johnnytays.github.io/spaceharmony-landing/" class="card block bg-gradient-to-br from-teal-600 to-teal-800 rounded-2xl p-6 border border-teal-500/30 transition" data-category="realestate">
+          <div class="absolute top-3 right-3 text-xs font-bold text-teal-200/50">#29</div>
+          <div class="text-4xl mb-4">🏠</div>
+          <h4 class="text-lg font-bold text-white mb-2">SpaceHarmony</h4>
+          <p class="text-teal-200 text-sm">Upload a room photo — get lighting, furniture & color recommendations.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">30</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">30</div>
-        <a href="https://johnnytays.github.io/seo-genius-pro-landing/" class="card block bg-gradient-to-br from-cyan-600 to-cyan-800 rounded-2xl p-6 border border-cyan-500/30 transition">
-          <div class="text-5xl mb-4">🧠</div>
-          <h4 class="text-xl font-bold text-white mb-3">SEO Genius Pro</h4>
-          <p class="text-cyan-200 text-sm leading-relaxed">Enterprise SEO intelligence — 21-category analysis with mathematical ROI modeling.</p>
-          <div class="mt-4 text-cyan-300 text-sm font-semibold">Click to explore →</div>
+        <a href="https://johnnytays.github.io/junksnap-landing/" class="card block bg-gradient-to-br from-orange-600 to-orange-800 rounded-2xl p-6 border border-orange-500/30 transition" data-category="realestate">
+          <div class="absolute top-3 right-3 text-xs font-bold text-orange-200/50">#30</div>
+          <div class="text-4xl mb-4">🚛</div>
+          <h4 class="text-lg font-bold text-white mb-2">JunkSnap AI</h4>
+          <p class="text-orange-200 text-sm">AI job management for junk removal — photo estimates & invoicing.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">31</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">31</div>
-        <a href="https://johnnytays.github.io/skillhacker-landing/" class="card block bg-gradient-to-br from-violet-600 to-violet-800 rounded-2xl p-6 border border-violet-500/30 transition">
-          <div class="text-5xl mb-4">🚀</div>
-          <h4 class="text-xl font-bold text-white mb-3">SkillHacker</h4>
-          <p class="text-violet-200 text-sm leading-relaxed">Neural acceleration — master any skill 10x faster with AI pathway optimization.</p>
-          <div class="mt-4 text-violet-300 text-sm font-semibold">Click to explore →</div>
+        <!-- NATURE (3) -->
+        <a href="https://johnnytays.github.io/naturalistpro-landing/" class="card block bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-6 border border-green-500/30 transition" data-category="nature">
+          <div class="absolute top-3 right-3 text-xs font-bold text-green-200/50">#31</div>
+          <div class="text-4xl mb-4">🔬</div>
+          <h4 class="text-lg font-bold text-white mb-2">NaturalistPro</h4>
+          <p class="text-green-200 text-sm">Research-grade species identification — flora, fauna, fungi.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">32</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">32</div>
-        <a href="https://johnnytays.github.io/socialgenius-pro-landing/" class="card block bg-gradient-to-br from-sky-600 to-sky-800 rounded-2xl p-6 border border-sky-500/30 transition">
-          <div class="text-5xl mb-4">📊</div>
-          <h4 class="text-xl font-bold text-white mb-3">SocialGenius Pro</h4>
-          <p class="text-sky-200 text-sm leading-relaxed">Enterprise social media intelligence — 25+ categories, trend synthesis & growth modeling.</p>
-          <div class="mt-4 text-sky-300 text-sm font-semibold">Click to explore →</div>
+        <a href="https://johnnytays.github.io/plantnostic-landing/" class="card block bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-6 border border-green-500/30 transition" data-category="nature">
+          <div class="absolute top-3 right-3 text-xs font-bold text-green-200/50">#32</div>
+          <div class="text-4xl mb-4">🌿</div>
+          <h4 class="text-lg font-bold text-white mb-2">PlantNostic</h4>
+          <p class="text-green-200 text-sm">AI plant doctor — identify species, diagnose diseases & care plans.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">33</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">33</div>
-        <a href="https://johnnytays.github.io/spaceharmony-landing/" class="card block bg-gradient-to-br from-violet-600 to-violet-800 rounded-2xl p-6 border border-violet-500/30 transition">
-          <div class="text-5xl mb-4">🏠</div>
-          <h4 class="text-xl font-bold text-white mb-3">SpaceHarmony</h4>
-          <p class="text-violet-200 text-sm leading-relaxed">Upload a room photo — get lighting, furniture & color recommendations for well-being.</p>
-          <div class="mt-4 text-violet-300 text-sm font-semibold">Click to explore →</div>
+        <a href="https://johnnytays.github.io/wildsenseai-landing/" class="card block bg-gradient-to-br from-amber-600 to-amber-800 rounded-2xl p-6 border border-amber-500/30 transition" data-category="nature">
+          <div class="absolute top-3 right-3 text-xs font-bold text-amber-200/50">#33</div>
+          <div class="text-4xl mb-4">🐾</div>
+          <h4 class="text-lg font-bold text-white mb-2">WildSenseAI</h4>
+          <p class="text-amber-200 text-sm">AI pet & animal intelligence — breed ID, nutrition plans.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">34</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">34</div>
-        <a href="https://johnnytays.github.io/subtextai-landing/" class="card block bg-gradient-to-br from-pink-600 to-pink-800 rounded-2xl p-6 border border-pink-500/30 transition">
-          <div class="text-5xl mb-4">🎭</div>
-          <h4 class="text-xl font-bold text-white mb-3">SubtextAI</h4>
-          <p class="text-pink-200 text-sm leading-relaxed">Decode hidden manipulation in any message — gaslighting, guilt trips & toxic patterns.</p>
-          <div class="mt-4 text-pink-300 text-sm font-semibold">Click to explore →</div>
+        <!-- DETECTION (2) -->
+        <a href="https://johnnytays.github.io/subtextai-landing/" class="card block bg-gradient-to-br from-rose-600 to-rose-800 rounded-2xl p-6 border border-rose-500/30 transition" data-category="detection">
+          <div class="absolute top-3 right-3 text-xs font-bold text-rose-200/50">#34</div>
+          <div class="text-4xl mb-4">🎭</div>
+          <h4 class="text-lg font-bold text-white mb-2">SubtextAI</h4>
+          <p class="text-rose-200 text-sm">Decode hidden manipulation in any message — gaslighting, toxic patterns.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">35</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">35</div>
-        <a href="https://johnnytays.github.io/tonguetip-ai/" class="card block bg-gradient-to-br from-pink-600 to-pink-800 rounded-2xl p-6 border border-pink-500/30 transition">
-          <div class="text-5xl mb-4">💭</div>
-          <h4 class="text-xl font-bold text-white mb-3">TongueTip AI</h4>
-          <p class="text-pink-200 text-sm leading-relaxed">"It's on the tip of my tongue" — describe anything, AI finds movies, songs, books & facts.</p>
-          <div class="mt-4 text-pink-300 text-sm font-semibold">Click to explore →</div>
+        <a href="https://johnnytays.github.io/gamemaster-ai-landing/" class="card block bg-gradient-to-br from-violet-600 to-violet-800 rounded-2xl p-6 border border-violet-500/30 transition" data-category="detection">
+          <div class="absolute top-3 right-3 text-xs font-bold text-violet-200/50">#35</div>
+          <div class="text-4xl mb-4">🎮</div>
+          <h4 class="text-lg font-bold text-white mb-2">GameMaster AI</h4>
+          <p class="text-violet-200 text-sm">Real-time tactical analysis for ANY game — FPS, fighting, MOBA.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">36</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">36</div>
-        <a href="https://johnnytays.github.io/wildsenseai-landing/" class="card block bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-6 border border-green-500/30 transition">
-          <div class="text-5xl mb-4">🐾</div>
-          <h4 class="text-xl font-bold text-white mb-3">WildSenseAI</h4>
-          <p class="text-green-200 text-sm leading-relaxed">AI pet & animal intelligence — breed ID, nutrition plans & behavior analysis.</p>
-          <div class="mt-4 text-green-300 text-sm font-semibold">Click to explore →</div>
+        <!-- UTILITY (2) -->
+        <a href="https://johnnytays.github.io/tonguetip-ai/" class="card block bg-gradient-to-br from-cyan-600 to-cyan-800 rounded-2xl p-6 border border-cyan-500/30 transition" data-category="utility">
+          <div class="absolute top-3 right-3 text-xs font-bold text-cyan-200/50">#36</div>
+          <div class="text-4xl mb-4">💭</div>
+          <h4 class="text-lg font-bold text-white mb-2">TongueTip AI</h4>
+          <p class="text-cyan-200 text-sm">"It's on the tip of my tongue" — describe anything, AI finds it.</p>
         </a>
 
-        <span class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded-full">37</span>
-        <div class="text-2xl font-bold text-white/50 mb-2">37</div>
-        <a href="https://johnnytays.github.io/youtube-growth-pro-landing/" class="card block bg-gradient-to-br from-red-600 to-red-800 rounded-2xl p-6 border border-red-500/30 transition">
-          <div class="text-5xl mb-4">📺</div>
-          <h4 class="text-xl font-bold text-white mb-3">YouTube Growth Pro</h4>
-          <p class="text-red-200 text-sm leading-relaxed">Enterprise YouTube intelligence — viral patterns, revenue modeling & competitive positioning.</p>
-          <div class="mt-4 text-red-300 text-sm font-semibold">Click to explore →</div>
+        <a href="https://johnnytays.github.io/gardengenius-landing/" class="card block bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-6 border border-green-500/30 transition" data-category="utility">
+          <div class="absolute top-3 right-3 text-xs font-bold text-green-200/50">#37</div>
+          <div class="text-4xl mb-4">🌱</div>
+          <h4 class="text-lg font-bold text-white mb-2">GardenGenius</h4>
+          <p class="text-green-200 text-sm">Upload a garden photo — get scientific planting schedules.</p>
         </a>
 
       </div>
     </div>
   </section>
 
-  <footer class="py-8 px-4 bg-slate-950 border-t border-slate-800">
-    <div class="max-w-6xl mx-auto text-center text-slate-500">
+  <footer class="py-8 px-4 bg-slate-900 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto text-center text-slate-500">
       <p class="font-bold text-white mb-2">🚀 JohnnyTays</p>
-      <p>© 2026 JohnnyTays. All rights reserved.</p>
+      <p class="text-sm">© 2026. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    function filterCategory(category) {
+      const cards = document.querySelectorAll('.card');
+      const buttons = document.querySelectorAll('.category-btn');
+      
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-indigo-500/20', 'border-indigo-500/50', 'text-indigo-300');
+        btn.classList.add('bg-slate-800', 'border-slate-700', 'text-slate-400');
+      });
+      event.target.classList.remove('bg-slate-800', 'border-slate-700', 'text-slate-400');
+      event.target.classList.add('bg-indigo-500/20', 'border-indigo-500/50', 'text-indigo-300');
+      
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </body>
 </html>
