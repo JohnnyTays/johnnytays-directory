@@ -3,39 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JohnnyTays - AI Solutions</title>
-  <meta name="description" content="41 AI-powered tools designed to solve real problems.">
+  <title>JohnnyTays - 41 AI Tools</title>
+  <meta name="description" content="41 AI-powered tools that went viral. Access-protected.">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root { --bg-primary: #0f172a; }
     body { background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%); min-height: 100vh; }
     .card { position: relative; transition: all 0.3s ease; }
-    .card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
-    .card-locked { opacity: 0.7; }
-    .card-locked:hover { transform: none; box-shadow: 0 10px 25px rgba(0,0,0,0.2); cursor: not-allowed; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(0,0,0,0.3); }
     .category-nav { scrollbar-width: none; -ms-overflow-style: none; }
     .category-nav::-webkit-scrollbar { display: none; }
-    .glow { box-shadow: 0 0 30px rgba(99, 102, 241, 0.2); }
-    .pulse-border { animation: pulseBorder 2s ease-in-out infinite; }
-    @keyframes pulseBorder {
-      0%, 100% { border-color: rgba(99, 102, 241, 0.4); }
-      50% { border-color: rgba(99, 102, 241, 0.9); }
-    }
-    .locked-overlay {
-      position: absolute; inset: 0; background: rgba(15, 23, 42, 0.85);
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      border-radius: 1rem; z-index: 10; backdrop-filter: blur(2px);
-    }
+    .lock-badge { position: absolute; top: 12px; right: 12px; background: rgba(15,23,42,0.85); backdrop-filter: blur(4px); border: 1px solid rgba(99,102,241,0.4); border-radius: 6px; padding: 4px 10px; font-size: 12px; font-weight: 600; color: #a5b4fc; }
     .form-input { background: rgba(30, 27, 75, 0.6); border: 1px solid rgba(99, 102, 241, 0.3); }
     .form-input:focus { border-color: rgba(99, 102, 241, 0.8); outline: none; box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2); }
-    .tier-card { background: linear-gradient(135deg, rgba(30, 27, 75, 0.8), rgba(15, 23, 42, 0.9)); border: 1px solid rgba(99, 102, 241, 0.3); }
-    .tier-card:hover { border-color: rgba(99, 102, 241, 0.6); }
-    .tier-featured { border-color: rgba(99, 102, 241, 0.8); box-shadow: 0 0 40px rgba(99, 102, 241, 0.15); }
   </style>
 </head>
 <body class="text-white">
 
-  <!-- NAVIGATION -->
   <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-700">
     <div class="max-w-7xl mx-auto px-4 py-4">
       <div class="flex items-center justify-between">
@@ -43,463 +26,345 @@
           <span class="text-3xl">🚀</span>
           <div>
             <h1 class="text-xl font-bold">JohnnyTays</h1>
-            <p class="text-xs text-slate-400">AI Solutions</p>
+            <p class="text-xs text-slate-400">41 AI Tools</p>
           </div>
         </div>
-        <div class="flex gap-6 text-sm">
-          <span class="text-indigo-400 font-semibold">41 Products</span>
-          <a href="#access" class="bg-indigo-600 hover:bg-indigo-500 px-4 py-1.5 rounded-full font-semibold transition">Get Access</a>
-        </div>
+        <a href="#get-access" class="bg-indigo-600 hover:bg-indigo-500 px-5 py-2 rounded-lg font-semibold transition text-sm">Get Access</a>
       </div>
     </div>
   </nav>
 
-  <!-- GATE BANNER -->
-  <section class="pt-28 pb-4 px-4">
-    <div class="max-w-4xl mx-auto">
-      <div class="bg-gradient-to-r from-indigo-900/80 via-violet-900/60 to-indigo-900/80 border-2 border-indigo-500/60 rounded-2xl p-6 md:p-8 pulse-border">
-        <div class="flex items-start gap-4">
-          <span class="text-5xl">🔒</span>
-          <div>
-            <h2 class="text-2xl md:text-3xl font-bold mb-2">Platform Access Required</h2>
-            <p class="text-indigo-200 text-lg mb-3">Our AI suite went viral. Over 300 users in 48 hours. Demand exceeded capacity — so we're upgrading.</p>
-            <p class="text-slate-300 mb-4">All 41 products are now access-protected. Browse the catalog below. When you see what you need, request access through the form.</p>
-            <div class="flex flex-wrap gap-3">
-              <a href="#access" class="bg-indigo-600 hover:bg-indigo-500 px-6 py-2.5 rounded-lg font-bold transition text-lg">Request Access →</a>
-              <a href="#pricing" class="border border-indigo-400/50 hover:border-indigo-400 px-6 py-2.5 rounded-lg font-semibold transition text-indigo-300">View Pricing</a>
-            </div>
-          </div>
-        </div>
+  <section class="pt-28 pb-6 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="inline-block bg-indigo-500/20 border border-indigo-500/40 rounded-full px-4 py-1.5 text-sm font-semibold text-indigo-300 mb-6">
+        🔒 Access Protected
       </div>
-    </div>
-  </section>
-
-  <!-- HERO -->
-  <section class="pt-6 pb-8 px-4">
-    <div class="max-w-4xl mx-auto text-center">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4">Next-Level <span class="text-indigo-400">AI Solutions</span></h1>
-      <p class="text-xl text-slate-400">41 powerful tools designed to solve real problems.</p>
-    </div>
-  </section>
-
-  <!-- PRICING TIERS -->
-  <section id="pricing" class="py-8 px-4">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold text-center mb-2">Access Tiers</h2>
-      <p class="text-slate-400 text-center mb-8">No subscriptions. No hidden fees. Pay for what you need.</p>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="tier-card rounded-2xl p-6">
-          <div class="text-sm font-semibold text-slate-400 mb-1">SINGLE REPORT</div>
-          <div class="text-4xl font-bold mb-1">$9<span class="text-lg text-slate-400">-$249</span></div>
-          <div class="text-slate-400 text-sm mb-4">per report, varies by product</div>
-          <ul class="text-sm text-slate-300 space-y-2 mb-6">
-            <li>✓ One complete AI-generated report</li>
-            <li>✓ Full 20+ section diagnostic</li>
-            <li>✓ Downloadable results</li>
-            <li>✓ No subscription required</li>
-          </ul>
-          <div class="text-xs text-slate-500">PlantNostic $9 · FixGenius $14 · Polaris $29 · ComplianceCraft $99</div>
-        </div>
-        <div class="tier-card rounded-2xl p-6 tier-featured relative">
-          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-indigo-600 text-xs font-bold px-3 py-1 rounded-full">BEST VALUE</div>
-          <div class="text-sm font-semibold text-indigo-400 mb-1">ALL-ACCESS PRO</div>
-          <div class="text-4xl font-bold mb-1">$149<span class="text-lg text-slate-400">/mo</span></div>
-          <div class="text-slate-400 text-sm mb-4">unlimited reports, all 41 products</div>
-          <ul class="text-sm text-slate-300 space-y-2 mb-6">
-            <li>✓ Unlimited reports across all products</li>
-            <li>✓ Priority processing</li>
-            <li>✓ Export & PDF generation</li>
-            <li>✓ New products included automatically</li>
-            <li>✓ Cancel anytime</li>
-          </ul>
-        </div>
-        <div class="tier-card rounded-2xl p-6">
-          <div class="text-sm font-semibold text-slate-400 mb-1">ENTERPRISE</div>
-          <div class="text-4xl font-bold mb-1">$499<span class="text-lg text-slate-400">/mo</span></div>
-          <div class="text-slate-400 text-sm mb-4">team access + API + priority</div>
-          <ul class="text-sm text-slate-300 space-y-2 mb-6">
-            <li>✓ Everything in All-Access Pro</li>
-            <li>✓ Team accounts (up to 10)</li>
-            <li>✓ API access for integration</li>
-            <li>✓ Custom report templates</li>
-            <li>✓ Dedicated support</li>
-            <li>✓ SLA guarantee</li>
-          </ul>
-        </div>
-      </div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">You used the tools.<br>Now they're <span class="text-indigo-400">access-protected</span>.</h1>
+      <p class="text-lg text-slate-400 mb-2">41 AI-powered tools that produce real results — diagnosis, analysis, blueprints, reports.</p>
+      <p class="text-slate-500">Over 25,000 visits in 24 hours. The free run is over. Access is now by request.</p>
     </div>
   </section>
 
   <!-- Category Navigation -->
-  <section class="px-4 pb-4">
+  <section class="px-4 pb-6">
     <div class="max-w-7xl mx-auto">
-      <div class="category-nav flex flex-wrap gap-3 justify-center">
-        <button onclick="filterCategory('all')" class="category-btn active bg-indigo-500/20 border border-indigo-500/50 text-indigo-300 px-4 py-2 rounded-full text-sm font-semibold hover:bg-indigo-500/30 transition" data-category="all">All (41)</button>
-        <button onclick="filterCategory('business')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-4 py-2 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="business">Business (11)</button>
-        <button onclick="filterCategory('life')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-4 py-2 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="life">Life (6)</button>
-        <button onclick="filterCategory('education')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-4 py-2 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="education">Education (3)</button>
-        <button onclick="filterCategory('commerce')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-4 py-2 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="commerce">Resale/Commerce (4)</button>
-        <button onclick="filterCategory('productivity')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-4 py-2 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="productivity">Productivity (6)</button>
-        <button onclick="filterCategory('realestate')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-4 py-2 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="realestate">Real Estate (3)</button>
-        <button onclick="filterCategory('nature')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-4 py-2 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="nature">Nature (3)</button>
-        <button onclick="filterCategory('detection')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-4 py-2 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="detection">Detection (2)</button>
-        <button onclick="filterCategory('utility')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-4 py-2 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="utility">Utility (3)</button>
+      <div class="category-nav flex flex-wrap gap-2 justify-center">
+        <button onclick="filterCategory('all')" class="category-btn bg-indigo-500/20 border border-indigo-500/50 text-indigo-300 px-3 py-1.5 rounded-full text-sm font-semibold hover:bg-indigo-500/30 transition" data-category="all">All</button>
+        <button onclick="filterCategory('business')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-3 py-1.5 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="business">Business</button>
+        <button onclick="filterCategory('life')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-3 py-1.5 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="life">Life</button>
+        <button onclick="filterCategory('education')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-3 py-1.5 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="education">Education</button>
+        <button onclick="filterCategory('commerce')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-3 py-1.5 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="commerce">Commerce</button>
+        <button onclick="filterCategory('productivity')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-3 py-1.5 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="productivity">Productivity</button>
+        <button onclick="filterCategory('realestate')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-3 py-1.5 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="realestate">Real Estate</button>
+        <button onclick="filterCategory('nature')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-3 py-1.5 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="nature">Nature</button>
+        <button onclick="filterCategory('detection')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-3 py-1.5 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="detection">Detection</button>
+        <button onclick="filterCategory('utility')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-3 py-1.5 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="utility">Utility</button>
       </div>
     </div>
   </section>
 
-  <!-- PRODUCT GRID -->
-  <section class="py-4 px-4 pb-24">
+  <!-- Product Grid -->
+  <section class="py-2 px-4 pb-12">
     <div class="max-w-7xl mx-auto">
-      <div id="products-grid" class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div id="products-grid" class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
 
-        <!-- BUSINESS (11) -->
-        <div class="card card-locked relative block bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-6 border border-blue-500/30 transition" data-category="business">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-blue-200/50">#1</div>
-          <div class="text-4xl mb-4">📊</div>
-          <h4 class="text-lg font-bold text-white mb-2">eBOMP</h4>
-          <p class="text-blue-200 text-sm">Executive business operations — AI command center for strategic growth & operational control.</p>
+        <div class="card bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-6 border border-blue-500/30" data-category="business">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">📊</div>
+          <h4 class="text-lg font-bold text-white mb-1">eBOMP</h4>
+          <p class="text-blue-200 text-sm">Executive business operations — AI command center for strategic growth.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-6 border border-blue-500/30 transition" data-category="business">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-blue-200/50">#2</div>
-          <div class="text-4xl mb-4">🎯</div>
-          <h4 class="text-lg font-bold text-white mb-2">Executive Intelligence</h4>
-          <p class="text-blue-200 text-sm">Strategic decision support — 4-stage cognitive pipeline for executive analysis.</p>
+        <div class="card bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-6 border border-blue-500/30" data-category="business">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">🎯</div>
+          <h4 class="text-lg font-bold text-white mb-1">Executive Intelligence</h4>
+          <p class="text-blue-200 text-sm">4-stage cognitive pipeline for executive analysis and decision support.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-indigo-600 to-indigo-800 rounded-2xl p-6 border border-indigo-500/30 transition" data-category="business">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-indigo-200/50">#3</div>
-          <div class="text-4xl mb-4">🏗️</div>
-          <h4 class="text-lg font-bold text-white mb-2">Product Architect</h4>
-          <p class="text-indigo-200 text-sm">Transform ideas into investor-ready business blueprints.</p>
+        <div class="card bg-gradient-to-br from-indigo-600 to-indigo-800 rounded-2xl p-6 border border-indigo-500/30" data-category="business">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">🏗️</div>
+          <h4 class="text-lg font-bold text-white mb-1">Product Architect</h4>
+          <p class="text-indigo-200 text-sm">Transform ideas into investor-ready blueprints — full specs, BOM, timeline.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-slate-600 to-slate-800 rounded-2xl p-6 border border-slate-500/30 transition" data-category="business">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-slate-200/50">#4</div>
-          <div class="text-4xl mb-4">🏢</div>
-          <h4 class="text-lg font-bold text-white mb-2">PropTech Intelligence</h4>
+        <div class="card bg-gradient-to-br from-slate-600 to-slate-800 rounded-2xl p-6 border border-slate-500/30" data-category="business">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">🏢</div>
+          <h4 class="text-lg font-bold text-white mb-1">PropTech Intelligence</h4>
           <p class="text-slate-200 text-sm">Enterprise real estate — AI market analysis, risk modeling & ROI forecasts.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-cyan-600 to-cyan-800 rounded-2xl p-6 border border-cyan-500/30 transition" data-category="business">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-cyan-200/50">#5</div>
-          <div class="text-4xl mb-4">🔗</div>
-          <h4 class="text-lg font-bold text-white mb-2">Pipeline Genesis</h4>
-          <p class="text-cyan-200 text-sm">AI customer intelligence — transform product ideas into sales strategy.</p>
+        <div class="card bg-gradient-to-br from-cyan-600 to-cyan-800 rounded-2xl p-6 border border-cyan-500/30" data-category="business">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">🔗</div>
+          <h4 class="text-lg font-bold text-white mb-1">Pipeline Genesis</h4>
+          <p class="text-cyan-200 text-sm">Transform product ideas into sales strategy — AI customer intelligence.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-cyan-600 to-cyan-800 rounded-2xl p-6 border border-cyan-500/30 transition" data-category="business">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-cyan-200/50">#6</div>
-          <div class="text-4xl mb-4">🧠</div>
-          <h4 class="text-lg font-bold text-white mb-2">SEO Genius Pro</h4>
-          <p class="text-cyan-200 text-sm">Enterprise SEO intelligence — 21-category analysis with ROI modeling.</p>
+        <div class="card bg-gradient-to-br from-cyan-600 to-cyan-800 rounded-2xl p-6 border border-cyan-500/30" data-category="business">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">🧠</div>
+          <h4 class="text-lg font-bold text-white mb-1">SEO Genius Pro</h4>
+          <p class="text-cyan-200 text-sm">21-category SEO analysis with ROI modeling and competitive benchmarking.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-sky-600 to-sky-800 rounded-2xl p-6 border border-sky-500/30 transition" data-category="business">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-sky-200/50">#7</div>
-          <div class="text-4xl mb-4">📊</div>
-          <h4 class="text-lg font-bold text-white mb-2">SocialGenius Pro</h4>
-          <p class="text-sky-200 text-sm">Enterprise social media intelligence — 25+ categories, trend synthesis.</p>
+        <div class="card bg-gradient-to-br from-sky-600 to-sky-800 rounded-2xl p-6 border border-sky-500/30" data-category="business">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">📊</div>
+          <h4 class="text-lg font-bold text-white mb-1">SocialGenius Pro</h4>
+          <p class="text-sky-200 text-sm">25+ categories of social media intelligence and trend synthesis.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-red-600 to-red-800 rounded-2xl p-6 border border-red-500/30 transition" data-category="business">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-red-200/50">#8</div>
-          <div class="text-4xl mb-4">📺</div>
-          <h4 class="text-lg font-bold text-white mb-2">YouTube Growth Pro</h4>
-          <p class="text-red-200 text-sm">Enterprise YouTube intelligence — viral patterns & revenue modeling.</p>
+        <div class="card bg-gradient-to-br from-red-600 to-red-800 rounded-2xl p-6 border border-red-500/30" data-category="business">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">📺</div>
+          <h4 class="text-lg font-bold text-white mb-1">YouTube Growth Pro</h4>
+          <p class="text-red-200 text-sm">Viral patterns, revenue modeling, and channel optimization.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-red-600 to-red-800 rounded-2xl p-6 border border-red-500/30 transition" data-category="business">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-red-200/50">#9</div>
-          <div class="text-4xl mb-4">💪</div>
-          <h4 class="text-lg font-bold text-white mb-2">Fitness Business Optimizer</h4>
+        <div class="card bg-gradient-to-br from-red-600 to-red-800 rounded-2xl p-6 border border-red-500/30" data-category="business">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">💪</div>
+          <h4 class="text-lg font-bold text-white mb-1">Fitness Business Optimizer</h4>
           <p class="text-red-200 text-sm">AI growth strategy for gyms — 20+ analysis categories.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-orange-600 to-orange-800 rounded-2xl p-6 border border-orange-500/30 transition" data-category="business">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-orange-200/50">#10</div>
-          <div class="text-4xl mb-4">🏠</div>
-          <h4 class="text-lg font-bold text-white mb-2">RE Marketing Diagnostician</h4>
+        <div class="card bg-gradient-to-br from-orange-600 to-orange-800 rounded-2xl p-6 border border-orange-500/30" data-category="business">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">🏠</div>
+          <h4 class="text-lg font-bold text-white mb-1">RE Marketing Diagnostician</h4>
           <p class="text-orange-200 text-sm">AI marketing audit for real estate — 20 categories, competitive benchmarking.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-violet-600 to-violet-800 rounded-2xl p-6 border border-violet-500/30 transition" data-category="business">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-violet-200/50">#11</div>
-          <div class="text-4xl mb-4">👁️</div>
-          <h4 class="text-lg font-bold text-white mb-2">VisionIQ Pro</h4>
-          <p class="text-violet-200 text-sm">AI executive eye health — 25 optimization functions for vision protection.</p>
+        <div class="card bg-gradient-to-br from-violet-600 to-violet-800 rounded-2xl p-6 border border-violet-500/30" data-category="business">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">👁️</div>
+          <h4 class="text-lg font-bold text-white mb-1">VisionIQ Pro</h4>
+          <p class="text-violet-200 text-sm">25 optimization functions for executive vision health and protection.</p>
         </div>
 
-        <!-- LIFE (6) -->
-        <div class="card card-locked relative block bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-6 border border-green-500/30 transition" data-category="life">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-green-200/50">#12</div>
-          <div class="text-4xl mb-4">🧠</div>
-          <h4 class="text-lg font-bold text-white mb-2">LifeOptimizer</h4>
-          <p class="text-green-200 text-sm">AI life optimization — meal planning, cleaning, fitness, finance.</p>
+        <div class="card bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-6 border border-green-500/30" data-category="life">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">🧠</div>
+          <h4 class="text-lg font-bold text-white mb-1">LifeOptimizer</h4>
+          <p class="text-green-200 text-sm">Meal planning, cleaning, fitness, finance — all-in-one life AI.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-teal-600 to-teal-800 rounded-2xl p-6 border border-teal-500/30 transition" data-category="life">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-teal-200/50">#13</div>
-          <div class="text-4xl mb-4">🌊</div>
-          <h4 class="text-lg font-bold text-white mb-2">LifeFlow Dynamics</h4>
-          <p class="text-teal-200 text-sm">AI process optimization — map complexity & forge efficient pathways.</p>
+        <div class="card bg-gradient-to-br from-teal-600 to-teal-800 rounded-2xl p-6 border border-teal-500/30" data-category="life">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">🌊</div>
+          <h4 class="text-lg font-bold text-white mb-1">LifeFlow Dynamics</h4>
+          <p class="text-teal-200 text-sm">Map complexity and forge efficient pathways through anything.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-purple-600 to-purple-800 rounded-2xl p-6 border border-purple-500/30 transition" data-category="life">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-purple-200/50">#14</div>
-          <div class="text-4xl mb-4">🧭</div>
-          <h4 class="text-lg font-bold text-white mb-2">LifePath Universal</h4>
-          <p class="text-purple-200 text-sm">AI strategic decisions — game theory, risk analysis & outcome prediction.</p>
+        <div class="card bg-gradient-to-br from-purple-600 to-purple-800 rounded-2xl p-6 border border-purple-500/30" data-category="life">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">🧭</div>
+          <h4 class="text-lg font-bold text-white mb-1">LifePath Universal</h4>
+          <p class="text-purple-200 text-sm">Game theory, risk analysis, and outcome prediction for big decisions.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-pink-600 to-pink-800 rounded-2xl p-6 border border-pink-500/30 transition" data-category="life">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-pink-200/50">#15</div>
-          <div class="text-4xl mb-4">💝</div>
-          <h4 class="text-lg font-bold text-white mb-2">LoveSync Intelligence</h4>
-          <p class="text-pink-200 text-sm">AI relationship intelligence — behavioral pattern analysis.</p>
+        <div class="card bg-gradient-to-br from-pink-600 to-pink-800 rounded-2xl p-6 border border-pink-500/30" data-category="life">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">💝</div>
+          <h4 class="text-lg font-bold text-white mb-1">LoveSync Intelligence</h4>
+          <p class="text-pink-200 text-sm">Behavioral pattern analysis for relationships.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-pink-600 to-pink-800 rounded-2xl p-6 border border-pink-500/30 transition" data-category="life">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-pink-200/50">#16</div>
-          <div class="text-4xl mb-4">💕</div>
-          <h4 class="text-lg font-bold text-white mb-2">Dating Intelligence Engine</h4>
-          <p class="text-pink-200 text-sm">AI conversation optimization — psychological profiling.</p>
+        <div class="card bg-gradient-to-br from-pink-600 to-pink-800 rounded-2xl p-6 border border-pink-500/30" data-category="life">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">💕</div>
+          <h4 class="text-lg font-bold text-white mb-1">Dating Intelligence Engine</h4>
+          <p class="text-pink-200 text-sm">Conversation optimization with psychological profiling.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-emerald-600 to-emerald-800 rounded-2xl p-6 border border-emerald-500/30 transition" data-category="life">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-emerald-200/50">#17</div>
-          <div class="text-4xl mb-4">🧬</div>
-          <h4 class="text-lg font-bold text-white mb-2">VitalityAI</h4>
-          <p class="text-emerald-200 text-sm">AI biological age detection — 127 biomarkers, personalized anti-aging protocols.</p>
+        <div class="card bg-gradient-to-br from-emerald-600 to-emerald-800 rounded-2xl p-6 border border-emerald-500/30" data-category="life">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">🧬</div>
+          <h4 class="text-lg font-bold text-white mb-1">VitalityAI</h4>
+          <p class="text-emerald-200 text-sm">127 biomarkers, personalized anti-aging protocols, biological age detection.</p>
         </div>
 
-        <!-- EDUCATION (3) -->
-        <div class="card card-locked relative block bg-gradient-to-br from-indigo-600 to-indigo-800 rounded-2xl p-6 border border-indigo-500/30 transition" data-category="education">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-indigo-200/50">#18</div>
-          <div class="text-4xl mb-4">🧠</div>
-          <h4 class="text-lg font-bold text-white mb-2">Cognitive Learning</h4>
-          <p class="text-indigo-200 text-sm">AI learning engine — transform any subject into personalized study.</p>
+        <div class="card bg-gradient-to-br from-indigo-600 to-indigo-800 rounded-2xl p-6 border border-indigo-500/30" data-category="education">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">🧠</div>
+          <h4 class="text-lg font-bold text-white mb-1">Cognitive Learning</h4>
+          <p class="text-indigo-200 text-sm">Transform any subject into personalized study plans.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-violet-600 to-violet-800 rounded-2xl p-6 border border-violet-500/30 transition" data-category="education">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-violet-200/50">#19</div>
-          <div class="text-4xl mb-4">🚀</div>
-          <h4 class="text-lg font-bold text-white mb-2">SkillHacker</h4>
-          <p class="text-violet-200 text-sm">Neural acceleration — master any skill 10x faster.</p>
+        <div class="card bg-gradient-to-br from-violet-600 to-violet-800 rounded-2xl p-6 border border-violet-500/30" data-category="education">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">🚀</div>
+          <h4 class="text-lg font-bold text-white mb-1">SkillHacker</h4>
+          <p class="text-violet-200 text-sm">Master any skill 10x faster with neural acceleration.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-yellow-600 to-yellow-800 rounded-2xl p-6 border border-yellow-500/30 transition" data-category="education">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-yellow-200/50">#20</div>
-          <div class="text-4xl mb-4">🎩</div>
-          <h4 class="text-lg font-bold text-white mb-2">AI Magic Mentor</h4>
-          <p class="text-yellow-200 text-sm">AI-powered magic tricks with method, patter & performance coaching.</p>
+        <div class="card bg-gradient-to-br from-yellow-600 to-yellow-800 rounded-2xl p-6 border border-yellow-500/30" data-category="education">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">🎩</div>
+          <h4 class="text-lg font-bold text-white mb-1">AI Magic Mentor</h4>
+          <p class="text-yellow-200 text-sm">Method, patter, and performance coaching for magic tricks.</p>
         </div>
 
-        <!-- RESALE/COMMERCE (4) -->
-        <div class="card card-locked relative block bg-gradient-to-br from-emerald-600 to-emerald-800 rounded-2xl p-6 border border-emerald-500/30 transition" data-category="commerce">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-emerald-200/50">#21</div>
-          <div class="text-4xl mb-4">💰</div>
-          <h4 class="text-lg font-bold text-white mb-2">FlipGenius</h4>
-          <p class="text-emerald-200 text-sm">Point phone at any item — AI reveals resale profit potential.</p>
+        <div class="card bg-gradient-to-br from-emerald-600 to-emerald-800 rounded-2xl p-6 border border-emerald-500/30" data-category="commerce">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">💰</div>
+          <h4 class="text-lg font-bold text-white mb-1">FlipGenius</h4>
+          <p class="text-emerald-200 text-sm">Point at any item — AI reveals resale profit potential.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-orange-600 to-orange-800 rounded-2xl p-6 border border-orange-500/30 transition" data-category="commerce">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-orange-200/50">#22</div>
-          <div class="text-4xl mb-4">📸</div>
-          <h4 class="text-lg font-bold text-white mb-2">FlipSnap</h4>
-          <p class="text-orange-200 text-sm">Snap a photo, get instant valuations & auto-generated listings.</p>
+        <div class="card bg-gradient-to-br from-orange-600 to-orange-800 rounded-2xl p-6 border border-orange-500/30" data-category="commerce">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">📸</div>
+          <h4 class="text-lg font-bold text-white mb-1">FlipSnap</h4>
+          <p class="text-orange-200 text-sm">Snap a photo, get instant valuations and auto-generated listings.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-amber-600 to-amber-800 rounded-2xl p-6 border border-amber-500/30 transition" data-category="commerce">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-amber-200/50">#23</div>
-          <div class="text-4xl mb-4">🔧</div>
-          <h4 class="text-lg font-bold text-white mb-2">FixGenius Universal</h4>
-          <p class="text-amber-200 text-sm">Upload a photo of anything broken — get repair instructions.</p>
+        <div class="card bg-gradient-to-br from-amber-600 to-amber-800 rounded-2xl p-6 border border-amber-500/30" data-category="commerce">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">🔧</div>
+          <h4 class="text-lg font-bold text-white mb-1">FixGenius Universal</h4>
+          <p class="text-amber-200 text-sm">Upload a photo of anything broken — get diagnosis, parts, and step-by-step repair.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-amber-600 to-amber-800 rounded-2xl p-6 border border-amber-500/30 transition" data-category="commerce">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-amber-200/50">#24</div>
-          <div class="text-4xl mb-4">🚚</div>
-          <h4 class="text-lg font-bold text-white mb-2">CaterCalc</h4>
-          <p class="text-amber-200 text-sm">AI catering quotes, shopping lists & profit analysis.</p>
+        <div class="card bg-gradient-to-br from-amber-600 to-amber-800 rounded-2xl p-6 border border-amber-500/30" data-category="commerce">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">🚚</div>
+          <h4 class="text-lg font-bold text-white mb-1">CaterCalc</h4>
+          <p class="text-amber-200 text-sm">AI catering quotes, shopping lists, and profit analysis.</p>
         </div>
 
-        <!-- PRODUCTIVITY (6) -->
-        <div class="card card-locked relative block bg-gradient-to-br from-amber-600 to-amber-800 rounded-2xl p-6 border border-amber-500/30 transition" data-category="productivity">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-amber-200/50">#25</div>
-          <div class="text-4xl mb-4">⚡</div>
-          <h4 class="text-lg font-bold text-white mb-2">Adaptive Task Engine</h4>
-          <p class="text-amber-200 text-sm">AI workflows — task ingestion, decomposition, smart scheduling.</p>
+        <div class="card bg-gradient-to-br from-amber-600 to-amber-800 rounded-2xl p-6 border border-amber-500/30" data-category="productivity">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">⚡</div>
+          <h4 class="text-lg font-bold text-white mb-1">Adaptive Task Engine</h4>
+          <p class="text-amber-200 text-sm">Task ingestion, decomposition, and smart scheduling.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-purple-600 to-purple-800 rounded-2xl p-6 border border-purple-500/30 transition" data-category="productivity">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-purple-200/50">#26</div>
-          <div class="text-4xl mb-4">🧞</div>
-          <h4 class="text-lg font-bold text-white mb-2">PromptGenie</h4>
+        <div class="card bg-gradient-to-br from-purple-600 to-purple-800 rounded-2xl p-6 border border-purple-500/30" data-category="productivity">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">🧞</div>
+          <h4 class="text-lg font-bold text-white mb-1">PromptGenie</h4>
           <p class="text-purple-200 text-sm">Transform basic prompts into mathematically optimized instructions.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-indigo-600 to-indigo-800 rounded-2xl p-6 border border-indigo-500/30 transition" data-category="productivity">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-indigo-200/50">#27</div>
-          <div class="text-4xl mb-4">⚛️</div>
-          <h4 class="text-lg font-bold text-white mb-2">Quantum Flip</h4>
-          <p class="text-indigo-200 text-sm">AI that understands physics, not just prices — equipment valuation.</p>
+        <div class="card bg-gradient-to-br from-indigo-600 to-indigo-800 rounded-2xl p-6 border border-indigo-500/30" data-category="productivity">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">⚛️</div>
+          <h4 class="text-lg font-bold text-white mb-1">Quantum Flip</h4>
+          <p class="text-indigo-200 text-sm">AI that understands physics — equipment valuation beyond price.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-slate-600 to-slate-800 rounded-2xl p-6 border border-slate-500/30 transition" data-category="productivity">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-slate-200/50">#28</div>
-          <div class="text-4xl mb-4">🧭</div>
-          <h4 class="text-lg font-bold text-white mb-2">Polaris Insight</h4>
-          <p class="text-slate-200 text-sm">AI that forces Thesis vs Antithesis — balanced, verified insights.</p>
+        <div class="card bg-gradient-to-br from-slate-600 to-slate-800 rounded-2xl p-6 border border-slate-500/30" data-category="productivity">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">🧭</div>
+          <h4 class="text-lg font-bold text-white mb-1">Polaris Insight</h4>
+          <p class="text-slate-200 text-sm">Thesis vs. Antithesis — balanced, verified, dual-polarity research.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-6 border border-green-500/30 transition" data-category="productivity">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-green-200/50">#29</div>
-          <div class="text-4xl mb-4">🥗</div>
-          <h4 class="text-lg font-bold text-white mb-2">CalCalc AI</h4>
-          <p class="text-green-200 text-sm">AI meal planning — scan your fridge, get personalized recipes.</p>
+        <div class="card bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-6 border border-green-500/30" data-category="productivity">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">🥗</div>
+          <h4 class="text-lg font-bold text-white mb-1">CalCalc AI</h4>
+          <p class="text-green-200 text-sm">Scan your fridge, get personalized recipes and meal plans.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-violet-600 to-cyan-800 rounded-2xl p-6 border border-violet-500/30 transition" data-category="productivity">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-violet-200/50">#30</div>
-          <div class="text-4xl mb-4">🧠</div>
-          <h4 class="text-lg font-bold text-white mb-2">SynapticCore</h4>
+        <div class="card bg-gradient-to-br from-violet-600 to-cyan-800 rounded-2xl p-6 border border-violet-500/30" data-category="productivity">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">🧠</div>
+          <h4 class="text-lg font-bold text-white mb-1">SynapticCore</h4>
           <p class="text-violet-200 text-sm">Cognitive Capacity Optimizer — 6 dimensions, 5 engines, 1 score.</p>
         </div>
 
-        <!-- REAL ESTATE (3) -->
-        <div class="card card-locked relative block bg-gradient-to-br from-violet-600 to-violet-800 rounded-2xl p-6 border border-violet-500/30 transition" data-category="realestate">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-violet-200/50">#31</div>
-          <div class="text-4xl mb-4">🔍</div>
-          <h4 class="text-lg font-bold text-white mb-2">ClarityScan AI</h4>
-          <p class="text-violet-200 text-sm">Neural space intelligence — 4-stage AI pipeline for asset analysis.</p>
+        <div class="card bg-gradient-to-br from-violet-600 to-violet-800 rounded-2xl p-6 border border-violet-500/30" data-category="realestate">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">🔍</div>
+          <h4 class="text-lg font-bold text-white mb-1">ClarityScan AI</h4>
+          <p class="text-violet-200 text-sm">4-stage AI pipeline for real estate asset analysis.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-teal-600 to-teal-800 rounded-2xl p-6 border border-teal-500/30 transition" data-category="realestate">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-teal-200/50">#32</div>
-          <div class="text-4xl mb-4">🏠</div>
-          <h4 class="text-lg font-bold text-white mb-2">SpaceHarmony</h4>
-          <p class="text-teal-200 text-sm">Upload a room photo — get lighting, furniture & color recommendations.</p>
+        <div class="card bg-gradient-to-br from-teal-600 to-teal-800 rounded-2xl p-6 border border-teal-500/30" data-category="realestate">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">🏠</div>
+          <h4 class="text-lg font-bold text-white mb-1">SpaceHarmony</h4>
+          <p class="text-teal-200 text-sm">Upload a room photo — get lighting, furniture, and color recommendations.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-orange-600 to-orange-800 rounded-2xl p-6 border border-orange-500/30 transition" data-category="realestate">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-orange-200/50">#33</div>
-          <div class="text-4xl mb-4">🚛</div>
-          <h4 class="text-lg font-bold text-white mb-2">JunkSnap AI</h4>
-          <p class="text-orange-200 text-sm">AI job management for junk removal — photo estimates & invoicing.</p>
+        <div class="card bg-gradient-to-br from-orange-600 to-orange-800 rounded-2xl p-6 border border-orange-500/30" data-category="realestate">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">🚛</div>
+          <h4 class="text-lg font-bold text-white mb-1">JunkSnap AI</h4>
+          <p class="text-orange-200 text-sm">Photo estimates and invoicing for junk removal jobs.</p>
         </div>
 
-        <!-- NATURE (3) -->
-        <div class="card card-locked relative block bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-6 border border-green-500/30 transition" data-category="nature">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-green-200/50">#34</div>
-          <div class="text-4xl mb-4">🔬</div>
-          <h4 class="text-lg font-bold text-white mb-2">NaturalistPro</h4>
+        <div class="card bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-6 border border-green-500/30" data-category="nature">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">🔬</div>
+          <h4 class="text-lg font-bold text-white mb-1">NaturalistPro</h4>
           <p class="text-green-200 text-sm">Research-grade species identification — flora, fauna, fungi.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-6 border border-green-500/30 transition" data-category="nature">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-green-200/50">#35</div>
-          <div class="text-4xl mb-4">🌿</div>
-          <h4 class="text-lg font-bold text-white mb-2">PlantNostic</h4>
-          <p class="text-green-200 text-sm">AI plant doctor — identify species, diagnose diseases & care plans.</p>
+        <div class="card bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-6 border border-green-500/30" data-category="nature">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">🌿</div>
+          <h4 class="text-lg font-bold text-white mb-1">PlantNostic</h4>
+          <p class="text-green-200 text-sm">Identify species, diagnose diseases, get care plans — one photo.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-amber-600 to-amber-800 rounded-2xl p-6 border border-amber-500/30 transition" data-category="nature">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-amber-200/50">#36</div>
-          <div class="text-4xl mb-4">🐾</div>
-          <h4 class="text-lg font-bold text-white mb-2">WildSenseAI</h4>
-          <p class="text-amber-200 text-sm">AI pet & animal intelligence — breed ID, nutrition plans.</p>
+        <div class="card bg-gradient-to-br from-amber-600 to-amber-800 rounded-2xl p-6 border border-amber-500/30" data-category="nature">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">🐾</div>
+          <h4 class="text-lg font-bold text-white mb-1">WildSenseAI</h4>
+          <p class="text-amber-200 text-sm">Breed ID, nutrition plans, and health analysis for pets and animals.</p>
         </div>
 
-        <!-- DETECTION (2) -->
-        <div class="card card-locked relative block bg-gradient-to-br from-rose-600 to-rose-800 rounded-2xl p-6 border border-rose-500/30 transition" data-category="detection">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-rose-200/50">#37</div>
-          <div class="text-4xl mb-4">🎭</div>
-          <h4 class="text-lg font-bold text-white mb-2">SubtextAI</h4>
-          <p class="text-rose-200 text-sm">Decode hidden manipulation in any message — gaslighting, toxic patterns.</p>
+        <div class="card bg-gradient-to-br from-rose-600 to-rose-800 rounded-2xl p-6 border border-rose-500/30" data-category="detection">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">🎭</div>
+          <h4 class="text-lg font-bold text-white mb-1">SubtextAI</h4>
+          <p class="text-rose-200 text-sm">Decode hidden manipulation — gaslighting, toxic patterns, red flags.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-violet-600 to-violet-800 rounded-2xl p-6 border border-violet-500/30 transition" data-category="detection">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-violet-200/50">#38</div>
-          <div class="text-4xl mb-4">🎮</div>
-          <h4 class="text-lg font-bold text-white mb-2">GameMaster AI</h4>
-          <p class="text-violet-200 text-sm">Real-time tactical analysis for ANY game — FPS, fighting, MOBA.</p>
+        <div class="card bg-gradient-to-br from-violet-600 to-violet-800 rounded-2xl p-6 border border-violet-500/30" data-category="detection">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">🎮</div>
+          <h4 class="text-lg font-bold text-white mb-1">GameMaster AI</h4>
+          <p class="text-violet-200 text-sm">Real-time tactical analysis for any game — FPS, fighting, MOBA.</p>
         </div>
 
-        <!-- UTILITY (3) -->
-        <div class="card card-locked relative block bg-gradient-to-br from-cyan-600 to-cyan-800 rounded-2xl p-6 border border-cyan-500/30 transition" data-category="utility">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-cyan-200/50">#39</div>
-          <div class="text-4xl mb-4">💭</div>
-          <h4 class="text-lg font-bold text-white mb-2">TongueTip AI</h4>
+        <div class="card bg-gradient-to-br from-cyan-600 to-cyan-800 rounded-2xl p-6 border border-cyan-500/30" data-category="utility">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">💭</div>
+          <h4 class="text-lg font-bold text-white mb-1">TongueTip AI</h4>
           <p class="text-cyan-200 text-sm">"It's on the tip of my tongue" — describe anything, AI finds it.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-6 border border-green-500/30 transition" data-category="utility">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-green-200/50">#40</div>
-          <div class="text-4xl mb-4">🌱</div>
-          <h4 class="text-lg font-bold text-white mb-2">GardenGenius</h4>
+        <div class="card bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-6 border border-green-500/30" data-category="utility">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">🌱</div>
+          <h4 class="text-lg font-bold text-white mb-1">GardenGenius</h4>
           <p class="text-green-200 text-sm">Upload a garden photo — get scientific planting schedules.</p>
         </div>
 
-        <div class="card card-locked relative block bg-gradient-to-br from-emerald-600 to-cyan-800 rounded-2xl p-6 border border-emerald-500/30 transition" data-category="utility">
-          <div class="locked-overlay"><span class="text-3xl mb-2">🔒</span><span class="text-sm font-bold text-indigo-300">Access Required</span></div>
-          <div class="absolute top-3 right-3 text-xs font-bold text-emerald-200/50">#41</div>
-          <div class="text-4xl mb-4">🧬</div>
-          <h4 class="text-lg font-bold text-white mb-2">AdenoSense</h4>
-          <p class="text-emerald-200 text-sm">AI circadian optimization — energy, focus & recovery tracking.</p>
+        <div class="card bg-gradient-to-br from-emerald-600 to-cyan-800 rounded-2xl p-6 border border-emerald-500/30" data-category="utility">
+          <div class="lock-badge">🔒</div>
+          <div class="text-4xl mb-3">🧬</div>
+          <h4 class="text-lg font-bold text-white mb-1">AdenoSense</h4>
+          <p class="text-emerald-200 text-sm">Circadian optimization — energy, focus, and recovery tracking.</p>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ACCESS REQUEST FORM -->
-  <section id="access" class="py-16 px-4">
-    <div class="max-w-2xl mx-auto">
-      <div class="bg-gradient-to-br from-slate-800/90 to-indigo-900/90 border border-indigo-500/40 rounded-2xl p-8">
-        <h2 class="text-3xl font-bold text-center mb-2">Request Access</h2>
-        <p class="text-slate-400 text-center mb-8">Tell us what you need. We'll respond within 24 hours.</p>
+  <!-- Access Form -->
+  <section id="get-access" class="py-16 px-4">
+    <div class="max-w-xl mx-auto">
+      <div class="bg-gradient-to-br from-slate-800/90 to-indigo-900/90 border border-indigo-500/30 rounded-2xl p-8">
+        <h2 class="text-2xl font-bold text-center mb-2">Get Access</h2>
+        <p class="text-slate-400 text-center mb-6 text-sm">You used the tools. You know what they do. Now tell us what you need.</p>
         <form action="https://formsubmit.co/johntaylor1online@gmail.com" method="POST">
           <input type="hidden" name="_subject" value="JohnnyTays Access Request">
           <input type="hidden" name="_captcha" value="true">
@@ -509,63 +374,47 @@
           <div class="space-y-4">
             <div class="grid md:grid-cols-2 gap-4">
               <div>
-                <label class="block text-sm font-semibold text-slate-300 mb-1">Name *</label>
+                <label class="block text-sm font-semibold text-slate-300 mb-1">Name</label>
                 <input type="text" name="name" required class="form-input w-full rounded-lg px-4 py-3 text-white placeholder-slate-500" placeholder="Your name">
               </div>
               <div>
-                <label class="block text-slate-300 mb-1 text-sm font-semibold">Email *</label>
+                <label class="block text-slate-300 mb-1 text-sm font-semibold">Email</label>
                 <input type="email" name="email" required class="form-input w-full rounded-lg px-4 py-3 text-white placeholder-slate-500" placeholder="you@company.com">
               </div>
             </div>
             
             <div>
-              <label class="block text-slate-300 mb-1 text-sm font-semibold">Company / Organization</label>
-              <input type="text" name="company" class="form-input w-full rounded-lg px-4 py-3 text-white placeholder-slate-500" placeholder="Acme Corp">
-            </div>
-
-            <div>
-              <label class="block text-slate-300 mb-1 text-sm font-semibold">Which products? *</label>
-              <select name="products" required class="form-input w-full rounded-lg px-4 py-3 text-white">
-                <option value="">Select your interest</option>
-                <option value="single-product">Single Product ($9-$249/report)</option>
-                <option value="all-access-pro">All-Access Pro ($149/mo — all 41 products)</option>
-                <option value="enterprise">Enterprise ($499/mo — team + API)</option>
-                <option value="custom">Custom / Not sure yet</option>
+              <label class="block text-slate-300 mb-1 text-sm font-semibold">Which tool do you need?</label>
+              <select name="tool" class="form-input w-full rounded-lg px-4 py-3 text-white">
+                <option value="">Select</option>
+                <option value="FixGenius">FixGenius — Repair diagnostics</option>
+                <option value="PlantNostic">PlantNostic — Plant care</option>
+                <option value="Product Architect">Product Architect — Product blueprints</option>
+                <option value="ComplianceCraft">ComplianceCraft — Compliance reports</option>
+                <option value="Polaris Insight">Polaris Insight — Investment analysis</option>
+                <option value="SynapticCore">SynapticCore — Cognitive optimization</option>
+                <option value="Multiple tools">Multiple tools</option>
+                <option value="All access">All 41 tools</option>
               </select>
             </div>
 
             <div>
-              <label class="block text-slate-300 mb-1 text-sm font-semibold">Budget Range</label>
-              <select name="budget" class="form-input w-full rounded-lg px-4 py-3 text-white">
-                <option value="">Select range</option>
-                <option value="under-50">Under $50</option>
-                <option value="50-149">$50 - $149</option>
-                <option value="150-499">$150 - $499</option>
-                <option value="500-999">$500 - $999</option>
-                <option value="1000+">$1,000+</option>
-              </select>
+              <label class="block text-slate-300 mb-1 text-sm font-semibold">What problem are you solving?</label>
+              <textarea name="message" required rows="3" class="form-input w-full rounded-lg px-4 py-3 text-white placeholder-slate-500" placeholder="Be specific. The more detail, the faster we can help."></textarea>
             </div>
 
-            <div>
-              <label class="block text-slate-300 mb-1 text-sm font-semibold">What problem are you solving? *</label>
-              <textarea name="message" required rows="4" class="form-input w-full rounded-lg px-4 py-3 text-white placeholder-slate-500" placeholder="Tell us what you need — the more specific, the faster we can help."></textarea>
-            </div>
-
-            <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 rounded-lg text-lg transition">
-              Request Access →
+            <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3.5 rounded-lg text-lg transition">
+              Request Access
             </button>
-            
-            <p class="text-xs text-slate-500 text-center">We review every request personally. Tire-kickers won't hear back.</p>
           </div>
         </form>
       </div>
     </div>
   </section>
 
-  <footer class="py-8 px-4 bg-slate-900 border-t border-slate-800">
-    <div class="max-w-7xl mx-auto text-center text-slate-500">
-      <p class="font-bold text-white mb-2">🚀 JohnnyTays</p>
-      <p class="text-sm">© 2026. All rights reserved.</p>
+  <footer class="py-6 px-4 bg-slate-900 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto text-center text-slate-500 text-sm">
+      <p>🚀 JohnnyTays — 41 AI-powered tools</p>
     </div>
   </footer>
 
@@ -573,20 +422,14 @@
     function filterCategory(category) {
       const cards = document.querySelectorAll('.card');
       const buttons = document.querySelectorAll('.category-btn');
-      
       buttons.forEach(btn => {
         btn.classList.remove('bg-indigo-500/20', 'border-indigo-500/50', 'text-indigo-300');
         btn.classList.add('bg-slate-800', 'border-slate-700', 'text-slate-400');
       });
       event.target.classList.remove('bg-slate-800', 'border-slate-700', 'text-slate-400');
       event.target.classList.add('bg-indigo-500/20', 'border-indigo-500/50', 'text-indigo-300');
-      
       cards.forEach(card => {
-        if (category === 'all' || card.dataset.category === category) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
+        card.style.display = (category === 'all' || card.dataset.category === category) ? 'block' : 'none';
       });
     }
   </script>
