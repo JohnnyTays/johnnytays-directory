@@ -361,54 +361,20 @@
 
   <!-- Access Form -->
   <section id="get-access" class="py-16 px-4">
-    <div class="max-w-xl mx-auto">
-      <div class="bg-gradient-to-br from-slate-800/90 to-indigo-900/90 border border-indigo-500/30 rounded-2xl p-8">
-        <h2 class="text-2xl font-bold text-center mb-2">Get Access</h2>
-        <p class="text-slate-400 text-center mb-6 text-sm">You used the tools. You know what they do. Now tell us what you need.</p>
-        <form action="https://formsubmit.co/johntaylor1online@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="JohnnyTays Access Request">
-          <input type="hidden" name="_captcha" value="true">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_next" value="https://johnnytays.github.io/johnnytays-directory/">
-          
-          <div class="space-y-4">
-            <div class="grid md:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-sm font-semibold text-slate-300 mb-1">Name</label>
-                <input type="text" name="name" required class="form-input w-full rounded-lg px-4 py-3 text-white placeholder-slate-500" placeholder="Your name">
-              </div>
-              <div>
-                <label class="block text-slate-300 mb-1 text-sm font-semibold">Email</label>
-                <input type="email" name="email" required class="form-input w-full rounded-lg px-4 py-3 text-white placeholder-slate-500" placeholder="you@company.com">
-              </div>
-            </div>
-            
-            <div>
-              <label class="block text-slate-300 mb-1 text-sm font-semibold">Which tool do you need?</label>
-              <select name="tool" class="form-input w-full rounded-lg px-4 py-3 text-white">
-                <option value="">Select</option>
-                <option value="FixGenius">FixGenius — Repair diagnostics</option>
-                <option value="PlantNostic">PlantNostic — Plant care</option>
-                <option value="Product Architect">Product Architect — Product blueprints</option>
-                <option value="ComplianceCraft">ComplianceCraft — Compliance reports</option>
-                <option value="Polaris Insight">Polaris Insight — Investment analysis</option>
-                <option value="SynapticCore">SynapticCore — Cognitive optimization</option>
-                <option value="Multiple tools">Multiple tools</option>
-                <option value="All access">All 41 tools</option>
-              </select>
-            </div>
-
-            <div>
-              <label class="block text-slate-300 mb-1 text-sm font-semibold">What problem are you solving?</label>
-              <textarea name="message" required rows="3" class="form-input w-full rounded-lg px-4 py-3 text-white placeholder-slate-500" placeholder="Be specific. The more detail, the faster we can help."></textarea>
-            </div>
-
-            <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3.5 rounded-lg text-lg transition">
-              Request Access
-            </button>
-          </div>
-        </form>
-      </div>
+    <div class="max-w-md mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-3">Get in.</h2>
+      <p class="text-slate-400 mb-8">25,000 people found these tools in one day. Now they're locked. Drop your email — you'll be first when we open.</p>
+      <form action="https://formsubmit.co/johntaylor1online@gmail.com" method="POST" class="flex gap-3">
+        <input type="hidden" name="_subject" value="JohnnyTays Access Request">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://johnnytays.github.io/johnnytays-directory/thanks.html">
+        <input type="email" name="email" required class="form-input flex-1 rounded-lg px-4 py-3 text-white placeholder-slate-500" placeholder="your@email.com">
+        <button type="submit" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-6 py-3 rounded-lg text-lg transition whitespace-nowrap">
+          Get Access
+        </button>
+      </form>
+      <p class="text-slate-600 text-xs mt-4">No spam. No selling your email. Just access.</p>
     </div>
   </section>
 

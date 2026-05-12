@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're in — JohnnyTays</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%); min-height: 100vh; }
+  </style>
+</head>
+<body class="text-white flex items-center justify-center min-h-screen px-4">
+  <div class="max-w-lg text-center">
+    <div class="text-6xl mb-6">✅</div>
+    <h1 class="text-4xl font-bold mb-4">You're in.</h1>
+    <p class="text-xl text-slate-300 mb-2">When we open access, you'll be first.</p>
+    <p class="text-slate-400 mb-8">In the meantime, share this link. Every referral moves you up the list.</p>
+    
+    <div class="bg-slate-800/80 border border-slate-700 rounded-xl p-4 mb-8">
+      <p class="text-sm text-slate-400 mb-2">Your referral link:</p>
+      <div class="flex gap-2">
+        <input id="refLink" type="text" readonly value="https://johnnytays.github.io/johnnytays-directory/?ref=early" class="flex-1 bg-slate-900 border border-slate-600 rounded-lg px-4 py-2 text-indigo-300 text-sm" onclick="this.select()">
+        <button onclick="copyLink()" id="copyBtn" class="bg-indigo-600 hover:bg-indigo-500 px-4 py-2 rounded-lg text-sm font-semibold transition">Copy</button>
+      </div>
+    </div>
+
+    <a href="https://johnnytays.github.io/johnnytays-directory/" class="text-indigo-400 hover:text-indigo-300 transition text-sm">← Back to directory</a>
+  </div>
+
+  <script>
+    function copyLink() {
+      const input = document.getElementById('refLink');
+      input.select();
+      navigator.clipboard.writeText(input.value);
+      document.getElementById('copyBtn').textContent = 'Copied!';
+      setTimeout(() => { document.getElementById('copyBtn').textContent = 'Copy'; }, 2000);
+    }
+  </script>
+</body>
+</html>
