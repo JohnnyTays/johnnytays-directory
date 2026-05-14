@@ -1,363 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JohnnyTays - 41 AI Tools</title>
-  <meta name="description" content="41 AI-powered tools. Diagnosis, analysis, blueprints, reports — real output, not chat. Went viral. Now access-protected.">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body { background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%); min-height: 100vh; }
-    .card { position: relative; transition: all 0.3s ease; }
-    .card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(0,0,0,0.3); }
-    .category-nav { scrollbar-width: none; -ms-overflow-style: none; }
-    .category-nav::-webkit-scrollbar { display: none; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>We took it down on purpose. — 120 AI Tools, Rebuilt Right.</title>
+<meta name="description" content="120 AI-powered business tools. One builder. Rebuilt from scratch. Launching June 6.">
+<meta property="og:title" content="We took it down on purpose.">
+<meta property="og:description" content="25,000 people visited in a day. We could've patched it. We rebuilt it instead.">
+<meta property="og:type" content="website">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{--bg:#0a0a0a;--surface:#111;--surface2:#1a1a1a;--border:#222;--text:#f5f5f5;--muted:#888;--accent:#00E5FF;--accent2:#00c2d4;--accent-dim:rgba(0,229,255,0.08);--accent-glow:rgba(0,229,255,0.15);--warn:#ff6b35}
+
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6;overflow-x:hidden}
+
+  /* HERO — full viewport with collage bg */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+  .hero-bg{position:absolute;top:0;left:0;width:100%;height:100%;background:url('collage-bg.png') center/cover no-repeat;opacity:0.45;filter:brightness(0.6)}
+  .hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(180deg,rgba(10,10,10,0.5) 0%,rgba(10,10,10,0.7) 40%,rgba(10,10,10,0.85) 100%)}
+  .hero-content{position:relative;z-index:2;max-width:640px;width:92%;padding:40px 0}
+
+  .badge{display:inline-block;background:var(--warn);color:#fff;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 18px;border-radius:4px;margin-bottom:24px}
+  .hero h1{font-size:38px;font-weight:800;line-height:1.15;letter-spacing:-0.5px;margin-bottom:16px}
+  .hero h1 span{color:var(--accent)}
+  .hero-sub{font-size:17px;color:var(--muted);line-height:1.55;margin-bottom:32px}
+
+  /* Countdown */
+  .countdown-section{margin-bottom:28px;text-align:center}
+  .countdown-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:2px;font-weight:600;margin-bottom:12px}
+  .countdown{display:flex;gap:8px;justify-content:center}
+  .cd-unit{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:8px;padding:10px 14px;min-width:60px}
+  .cd-unit .num{font-size:26px;font-weight:800;color:var(--accent);line-height:1}
+  .cd-unit .lbl{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:3px}
+
+  /* Story block */
+  .story{max-width:580px;margin:0 auto 32px;padding:24px;background:rgba(17,17,17,0.8);border:1px solid var(--border);border-radius:12px;backdrop-filter:blur(8px)}
+  .story p{font-size:14.5px;color:#bbb;line-height:1.7;margin-bottom:14px}
+  .story p:last-child{margin-bottom:0}
+  .story strong{color:var(--text);font-weight:600}
+  .story .hl{color:var(--accent);font-weight:600}
+
+  /* Form */
+  .form-section{max-width:460px;margin:0 auto 24px;padding:24px;background:rgba(17,17,17,0.9);border:1px solid var(--border);border-radius:12px;backdrop-filter:blur(8px)}
+  .form-h{font-size:18px;font-weight:700;margin-bottom:4px}
+  .form-sub{font-size:13px;color:var(--muted);margin-bottom:18px}
+  .fg{margin-bottom:12px}
+  .fg label{font-size:12px;color:var(--muted);display:block;margin-bottom:4px;font-weight:500}
+  input,select,textarea{width:100%;padding:11px 13px;background:var(--bg);border:1px solid var(--border);border-radius:7px;color:var(--text);font-size:14px;font-family:inherit;outline:none;transition:border-color .2s}
+  input:focus,select:focus,textarea:focus{border-color:var(--accent)}
+  select{appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23888'%3E%3Cpath d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+  textarea{resize:vertical;min-height:48px}
+  .btn{width:100%;padding:13px 24px;background:var(--accent);color:#000;font-size:15px;font-weight:700;border:none;border-radius:7px;cursor:pointer;transition:transform .15s,box-shadow .15s;margin-top:4px}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 4px 20px var(--accent-glow)}
+  .btn:active{transform:translateY(0)}
+
+  .success{display:none;text-align:center;padding:24px 0 0}
+  .success h2{font-size:22px;margin-bottom:8px;color:var(--accent)}
+  .success p{font-size:14px;color:var(--muted);line-height:1.6}
+
+  /* Share & Coffee */
+  .share-section{text-align:center;margin-bottom:20px;padding:12px 0;border-top:1px solid var(--border)}
+  .share-section p{font-size:13px;color:var(--muted);margin-bottom:8px}
+  .share-btn{display:inline-flex;align-items:center;gap:5px;padding:7px 16px;background:transparent;border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:12px;cursor:pointer;transition:all .2s}
+  .share-btn:hover{border-color:var(--accent);background:var(--accent-dim)}
+
+  .coffee-section{text-align:center;padding:12px 0;border-top:1px dashed var(--border)}
+  .coffee-btn{display:inline-block;padding:8px 20px;background:transparent;border:1px dashed var(--border);border-radius:7px;color:var(--muted);font-size:13px;text-decoration:none;transition:all .2s;line-height:1.5}
+  .coffee-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+
+  /* DIRECTORY — app cards below the fold */
+  .directory{padding:48px 20px 64px;max-width:1100px;margin:0 auto}
+  .dir-header{text-align:center;margin-bottom:32px}
+  .dir-header h2{font-size:24px;font-weight:700;margin-bottom:8px}
+  .dir-header p{font-size:14px;color:var(--muted)}
+  .dir-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+  .app-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;transition:all .2s;text-decoration:none;color:var(--text);display:block;position:relative;overflow:hidden}
+  .app-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,229,255,0.1)}
+  .app-card .app-icon{font-size:24px;margin-bottom:8px}
+  .app-card h3{font-size:15px;font-weight:600;margin-bottom:4px}
+  .app-card p{font-size:12px;color:var(--muted);line-height:1.4}
+  .app-card .tag{display:inline-block;font-size:10px;padding:2px 8px;border-radius:3px;margin-top:8px;font-weight:600;letter-spacing:.5px;text-transform:uppercase}
+  .tag-live{background:rgba(0,229,255,0.12);color:var(--accent)}
+  .tag-launch{background:rgba(255,107,53,0.12);color:var(--warn)}
+
+  @media(max-width:600px){
+    .hero h1{font-size:28px}
+    .story{padding:18px 14px}
+    .form-section{padding:18px 14px}
+    .cd-unit{min-width:52px;padding:8px 10px}
+    .cd-unit .num{font-size:20px}
+    .dir-grid{grid-template-columns:1fr 1fr}
+    .app-card{padding:12px}
+  }
+  @media(max-width:380px){
+    .dir-grid{grid-template-columns:1fr}
+  }
+</style>
 </head>
-<body class="text-white">
+<body>
 
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-700">
-    <div class="max-w-7xl mx-auto px-4 py-4">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center gap-3">
-          <span class="text-3xl">🚀</span>
-          <div>
-            <h1 class="text-xl font-bold">JohnnyTays</h1>
-            <p class="text-xs text-slate-400">41 AI Tools</p>
-          </div>
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+
+    <div class="badge">Under reconstruction</div>
+    <h1>We took it down <span>on purpose.</span></h1>
+    <p class="hero-sub">120 AI tools. One builder. Rebuilt right.</p>
+
+    <div class="story">
+      <p>You're here because you tried to use a tool and it didn't work. That's not a bug. <strong>That's a decision.</strong></p>
+      <p>25,000 people visited in a single day. Our API key got scraped. The tools went down. We could've patched it and kept going — but that would've meant <strong>more downtime, more broken experiences, more of you showing up to something that doesn't deliver.</strong></p>
+      <p>So we did the hard thing: <span class="hl">pulled everything and rebuilt from scratch.</span> Faster. Smarter. Actually reliable. One free use, then pay for what you need.</p>
+      <p>We're launching <strong>June 6</strong>. Tell us which tool brought you here — <strong>we're building the most-requested ones first.</strong></p>
+    </div>
+
+    <div class="countdown-section">
+      <div class="countdown-label">Launching June 6, 2026</div>
+      <div class="countdown" id="countdown">
+        <div class="cd-unit"><div class="num" id="days">--</div><div class="lbl">Days</div></div>
+        <div class="cd-unit"><div class="num" id="hours">--</div><div class="lbl">Hrs</div></div>
+        <div class="cd-unit"><div class="num" id="minutes">--</div><div class="lbl">Min</div></div>
+        <div class="cd-unit"><div class="num" id="seconds">--</div><div class="lbl">Sec</div></div>
+      </div>
+    </div>
+
+    <div class="form-section" id="formSection">
+      <div class="form-h">Get early access.</div>
+      <p class="form-sub">Tell us which tool you need — we're prioritizing by demand.</p>
+      <form id="signupForm">
+        <input type="hidden" name="app_name" id="appName" value="">
+        <input type="hidden" name="source" value="funnel_page">
+        <input type="hidden" name="signup_date" id="signupDate" value="">
+        <div class="fg">
+          <label for="email">Email address</label>
+          <input type="email" name="email" id="email" placeholder="you@example.com" required>
         </div>
-        <a href="#get-access" class="bg-indigo-600 hover:bg-indigo-500 px-5 py-2 rounded-lg font-semibold transition text-sm">Get Access →</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <section class="pt-28 pb-4 px-4">
-    <div class="max-w-3xl mx-auto text-center">
-      <h1 class="text-3xl md:text-5xl font-bold mb-4">41 AI tools that went viral.<br><span class="text-indigo-400">Now they're locked.</span></h1>
-      <p class="text-lg text-slate-300 mb-3">25,000 people used them in a single day. FixGenius diagnosed a broken drone from a photo. PlantNostic identified a dying houseplant and saved it. Product Architect specced out a hoverboard. ComplianceCraft generated a board-ready compliance report in 90 seconds.</p>
-      <p class="text-slate-400 mb-2">The free run is over. Browse the tools below. When you find the one you need, request access.</p>
-      <div class="flex flex-wrap gap-3 justify-center mt-4 text-sm">
-        <span class="bg-slate-800 border border-slate-600 px-3 py-1 rounded-full text-slate-300">🔧 Used one of our tools?</span>
-        <span class="bg-slate-800 border border-slate-600 px-3 py-1 rounded-full text-slate-300">🏗️ Building something similar?</span>
-        <span class="bg-slate-800 border border-slate-600 px-3 py-1 rounded-full text-slate-300">📊 Need a report right now?</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Category Nav -->
-  <section class="px-4 pb-4">
-    <div class="max-w-7xl mx-auto">
-      <div class="category-nav flex flex-wrap gap-2 justify-center">
-        <button onclick="filterCategory('all')" class="category-btn bg-indigo-500/20 border border-indigo-500/50 text-indigo-300 px-3 py-1.5 rounded-full text-sm font-semibold hover:bg-indigo-500/30 transition" data-category="all">All (41)</button>
-        <button onclick="filterCategory('business')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-3 py-1.5 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="business">Business (11)</button>
-        <button onclick="filterCategory('life')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-3 py-1.5 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="life">Life (6)</button>
-        <button onclick="filterCategory('education')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-3 py-1.5 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="education">Education (3)</button>
-        <button onclick="filterCategory('commerce')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-3 py-1.5 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="commerce">Commerce (4)</button>
-        <button onclick="filterCategory('productivity')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-3 py-1.5 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="productivity">Productivity (6)</button>
-        <button onclick="filterCategory('realestate')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-3 py-1.5 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="realestate">Real Estate (3)</button>
-        <button onclick="filterCategory('nature')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-3 py-1.5 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="nature">Nature (3)</button>
-        <button onclick="filterCategory('detection')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-3 py-1.5 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="detection">Detection (2)</button>
-        <button onclick="filterCategory('utility')" class="category-btn bg-slate-800 border border-slate-700 text-slate-400 px-3 py-1.5 rounded-full text-sm font-semibold hover:bg-slate-700 transition" data-category="utility">Utility (3)</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Product Grid -->
-  <section class="py-2 px-4 pb-12">
-    <div class="max-w-7xl mx-auto">
-      <div id="products-grid" class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-
-        <a href="https://johnnytays.github.io/ebomp-landing/" target="_blank" class="card block bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-6 border border-blue-500/30" data-category="business">
-          <div class="text-4xl mb-3">📊</div>
-          <h4 class="text-lg font-bold text-white mb-1">eBOMP</h4>
-          <p class="text-blue-200 text-sm">Executive business operations — AI command center for strategic growth.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/executive-intelligence-landing/" target="_blank" class="card block bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-6 border border-blue-500/30" data-category="business">
-          <div class="text-4xl mb-3">🎯</div>
-          <h4 class="text-lg font-bold text-white mb-1">Executive Intelligence</h4>
-          <p class="text-blue-200 text-sm">4-stage cognitive pipeline for executive analysis.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/product-architect-landing/" target="_blank" class="card block bg-gradient-to-br from-indigo-600 to-indigo-800 rounded-2xl p-6 border border-indigo-500/30" data-category="business">
-          <div class="text-4xl mb-3">🏗️</div>
-          <h4 class="text-lg font-bold text-white mb-1">Product Architect</h4>
-          <p class="text-indigo-200 text-sm">Transform ideas into investor-ready blueprints — full specs, BOM, timeline.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/proptech-intelligence-landing/" target="_blank" class="card block bg-gradient-to-br from-slate-600 to-slate-800 rounded-2xl p-6 border border-slate-500/30" data-category="business">
-          <div class="text-4xl mb-3">🏢</div>
-          <h4 class="text-lg font-bold text-white mb-1">PropTech Intelligence</h4>
-          <p class="text-slate-200 text-sm">Enterprise real estate — AI market analysis, risk modeling & ROI forecasts.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/pipeline-genesis-landing/" target="_blank" class="card block bg-gradient-to-br from-cyan-600 to-cyan-800 rounded-2xl p-6 border border-cyan-500/30" data-category="business">
-          <div class="text-4xl mb-3">🔗</div>
-          <h4 class="text-lg font-bold text-white mb-1">Pipeline Genesis</h4>
-          <p class="text-cyan-200 text-sm">Transform product ideas into sales strategy — AI customer intelligence.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/seo-genius-pro-landing/" target="_blank" class="card block bg-gradient-to-br from-cyan-600 to-cyan-800 rounded-2xl p-6 border border-cyan-500/30" data-category="business">
-          <div class="text-4xl mb-3">🧠</div>
-          <h4 class="text-lg font-bold text-white mb-1">SEO Genius Pro</h4>
-          <p class="text-cyan-200 text-sm">21-category SEO analysis with ROI modeling.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/socialgenius-pro-landing/" target="_blank" class="card block bg-gradient-to-br from-sky-600 to-sky-800 rounded-2xl p-6 border border-sky-500/30" data-category="business">
-          <div class="text-4xl mb-3">📊</div>
-          <h4 class="text-lg font-bold text-white mb-1">SocialGenius Pro</h4>
-          <p class="text-sky-200 text-sm">25+ categories of social media intelligence and trend synthesis.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/youtube-growth-pro-landing/" target="_blank" class="card block bg-gradient-to-br from-red-600 to-red-800 rounded-2xl p-6 border border-red-500/30" data-category="business">
-          <div class="text-4xl mb-3">📺</div>
-          <h4 class="text-lg font-bold text-white mb-1">YouTube Growth Pro</h4>
-          <p class="text-red-200 text-sm">Viral patterns, revenue modeling, and channel optimization.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/fitness-business-optimizer-landing/" target="_blank" class="card block bg-gradient-to-br from-red-600 to-red-800 rounded-2xl p-6 border border-red-500/30" data-category="business">
-          <div class="text-4xl mb-3">💪</div>
-          <h4 class="text-lg font-bold text-white mb-1">Fitness Business Optimizer</h4>
-          <p class="text-red-200 text-sm">AI growth strategy for gyms — 20+ analysis categories.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/re-marketing-diagnostician-landing/" target="_blank" class="card block bg-gradient-to-br from-orange-600 to-orange-800 rounded-2xl p-6 border border-orange-500/30" data-category="business">
-          <div class="text-4xl mb-3">🏠</div>
-          <h4 class="text-lg font-bold text-white mb-1">RE Marketing Diagnostician</h4>
-          <p class="text-orange-200 text-sm">AI marketing audit for real estate — 20 categories, competitive benchmarking.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/visioniq-pro-landing/" target="_blank" class="card block bg-gradient-to-br from-violet-600 to-violet-800 rounded-2xl p-6 border border-violet-500/30" data-category="business">
-          <div class="text-4xl mb-3">👁️</div>
-          <h4 class="text-lg font-bold text-white mb-1">VisionIQ Pro</h4>
-          <p class="text-violet-200 text-sm">25 optimization functions for executive vision health.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/life-optimizer-landing/" target="_blank" class="card block bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-6 border border-green-500/30" data-category="life">
-          <div class="text-4xl mb-3">🧠</div>
-          <h4 class="text-lg font-bold text-white mb-1">LifeOptimizer</h4>
-          <p class="text-green-200 text-sm">Meal planning, cleaning, fitness, finance — all-in-one life AI.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/lifeflow-dynamics-landing/" target="_blank" class="card block bg-gradient-to-br from-teal-600 to-teal-800 rounded-2xl p-6 border border-teal-500/30" data-category="life">
-          <div class="text-4xl mb-3">🌊</div>
-          <h4 class="text-lg font-bold text-white mb-1">LifeFlow Dynamics</h4>
-          <p class="text-teal-200 text-sm">Map complexity and forge efficient pathways.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/lifepath-universal-landing/" target="_blank" class="card block bg-gradient-to-br from-purple-600 to-purple-800 rounded-2xl p-6 border border-purple-500/30" data-category="life">
-          <div class="text-4xl mb-3">🧭</div>
-          <h4 class="text-lg font-bold text-white mb-1">LifePath Universal</h4>
-          <p class="text-purple-200 text-sm">Game theory, risk analysis, and outcome prediction for big decisions.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/lovesync-intelligence-landing/" target="_blank" class="card block bg-gradient-to-br from-pink-600 to-pink-800 rounded-2xl p-6 border border-pink-500/30" data-category="life">
-          <div class="text-4xl mb-3">💝</div>
-          <h4 class="text-lg font-bold text-white mb-1">LoveSync Intelligence</h4>
-          <p class="text-pink-200 text-sm">Behavioral pattern analysis for relationships.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/dating-intelligence-engine-landing/" target="_blank" class="card block bg-gradient-to-br from-pink-600 to-pink-800 rounded-2xl p-6 border border-pink-500/30" data-category="life">
-          <div class="text-4xl mb-3">💕</div>
-          <h4 class="text-lg font-bold text-white mb-1">Dating Intelligence Engine</h4>
-          <p class="text-pink-200 text-sm">Conversation optimization with psychological profiling.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/vitalityai-landing/" target="_blank" class="card block bg-gradient-to-br from-emerald-600 to-emerald-800 rounded-2xl p-6 border border-emerald-500/30" data-category="life">
-          <div class="text-4xl mb-3">🧬</div>
-          <h4 class="text-lg font-bold text-white mb-1">VitalityAI</h4>
-          <p class="text-emerald-200 text-sm">127 biomarkers, personalized anti-aging protocols, biological age detection.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/cognitive-learning-landing/" target="_blank" class="card block bg-gradient-to-br from-indigo-600 to-indigo-800 rounded-2xl p-6 border border-indigo-500/30" data-category="education">
-          <div class="text-4xl mb-3">🧠</div>
-          <h4 class="text-lg font-bold text-white mb-1">Cognitive Learning</h4>
-          <p class="text-indigo-200 text-sm">Transform any subject into personalized study plans.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/skillhacker-landing/" target="_blank" class="card block bg-gradient-to-br from-violet-600 to-violet-800 rounded-2xl p-6 border border-violet-500/30" data-category="education">
-          <div class="text-4xl mb-3">🚀</div>
-          <h4 class="text-lg font-bold text-white mb-1">SkillHacker</h4>
-          <p class="text-violet-200 text-sm">Master any skill 10x faster with neural acceleration.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/aimagic-landing/" target="_blank" class="card block bg-gradient-to-br from-yellow-600 to-yellow-800 rounded-2xl p-6 border border-yellow-500/30" data-category="education">
-          <div class="text-4xl mb-3">🎩</div>
-          <h4 class="text-lg font-bold text-white mb-1">AI Magic Mentor</h4>
-          <p class="text-yellow-200 text-sm">Method, patter, and performance coaching for magic tricks.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/flipgenius-landing/" target="_blank" class="card block bg-gradient-to-br from-emerald-600 to-emerald-800 rounded-2xl p-6 border border-emerald-500/30" data-category="commerce">
-          <div class="text-4xl mb-3">💰</div>
-          <h4 class="text-lg font-bold text-white mb-1">FlipGenius</h4>
-          <p class="text-emerald-200 text-sm">Point at any item — AI reveals resale profit potential.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/flipsnap-landing/" target="_blank" class="card block bg-gradient-to-br from-orange-600 to-orange-800 rounded-2xl p-6 border border-orange-500/30" data-category="commerce">
-          <div class="text-4xl mb-3">📸</div>
-          <h4 class="text-lg font-bold text-white mb-1">FlipSnap</h4>
-          <p class="text-orange-200 text-sm">Snap a photo, get instant valuations and auto-generated listings.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/fixgenius-landing/" target="_blank" class="card block bg-gradient-to-br from-amber-600 to-amber-800 rounded-2xl p-6 border border-amber-500/30" data-category="commerce">
-          <div class="text-4xl mb-3">🔧</div>
-          <h4 class="text-lg font-bold text-white mb-1">FixGenius Universal</h4>
-          <p class="text-amber-200 text-sm">Upload a photo of anything broken — get diagnosis, parts, and step-by-step repair.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/catercalc-landing/" target="_blank" class="card block bg-gradient-to-br from-amber-600 to-amber-800 rounded-2xl p-6 border border-amber-500/30" data-category="commerce">
-          <div class="text-4xl mb-3">🚚</div>
-          <h4 class="text-lg font-bold text-white mb-1">CaterCalc</h4>
-          <p class="text-amber-200 text-sm">AI catering quotes, shopping lists, and profit analysis.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/adaptive-task-landing/" target="_blank" class="card block bg-gradient-to-br from-amber-600 to-amber-800 rounded-2xl p-6 border border-amber-500/30" data-category="productivity">
-          <div class="text-4xl mb-3">⚡</div>
-          <h4 class="text-lg font-bold text-white mb-1">Adaptive Task Engine</h4>
-          <p class="text-amber-200 text-sm">Task ingestion, decomposition, and smart scheduling.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/promptgenie-landing/" target="_blank" class="card block bg-gradient-to-br from-purple-600 to-purple-800 rounded-2xl p-6 border border-purple-500/30" data-category="productivity">
-          <div class="text-4xl mb-3">🧞</div>
-          <h4 class="text-lg font-bold text-white mb-1">PromptGenie</h4>
-          <p class="text-purple-200 text-sm">Transform basic prompts into mathematically optimized instructions.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/quantum-flip-landing/" target="_blank" class="card block bg-gradient-to-br from-indigo-600 to-indigo-800 rounded-2xl p-6 border border-indigo-500/30" data-category="productivity">
-          <div class="text-4xl mb-3">⚛️</div>
-          <h4 class="text-lg font-bold text-white mb-1">Quantum Flip</h4>
-          <p class="text-indigo-200 text-sm">AI that understands physics — equipment valuation beyond price.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/polaris-insight-landing/" target="_blank" class="card block bg-gradient-to-br from-slate-600 to-slate-800 rounded-2xl p-6 border border-slate-500/30" data-category="productivity">
-          <div class="text-4xl mb-3">🧭</div>
-          <h4 class="text-lg font-bold text-white mb-1">Polaris Insight</h4>
-          <p class="text-slate-200 text-sm">Thesis vs. Antithesis — balanced, verified, dual-polarity research.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/calcalc-ai-landing/" target="_blank" class="card block bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-6 border border-green-500/30" data-category="productivity">
-          <div class="text-4xl mb-3">🥗</div>
-          <h4 class="text-lg font-bold text-white mb-1">CalCalc AI</h4>
-          <p class="text-green-200 text-sm">Scan your fridge, get personalized recipes and meal plans.</p>
-        </a>
-
-        <a href="https://synapticcore-v2.vercel.app" target="_blank" class="card block bg-gradient-to-br from-violet-600 to-cyan-800 rounded-2xl p-6 border border-violet-500/30" data-category="productivity">
-          <div class="text-4xl mb-3">🧠</div>
-          <h4 class="text-lg font-bold text-white mb-1">SynapticCore</h4>
-          <p class="text-violet-200 text-sm">Cognitive Capacity Optimizer — 6 dimensions, 5 engines, 1 score.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/clarityscan-ai-landing/" target="_blank" class="card block bg-gradient-to-br from-violet-600 to-violet-800 rounded-2xl p-6 border border-violet-500/30" data-category="realestate">
-          <div class="text-4xl mb-3">🔍</div>
-          <h4 class="text-lg font-bold text-white mb-1">ClarityScan AI</h4>
-          <p class="text-violet-200 text-sm">4-stage AI pipeline for real estate asset analysis.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/spaceharmony-landing/" target="_blank" class="card block bg-gradient-to-br from-teal-600 to-teal-800 rounded-2xl p-6 border border-teal-500/30" data-category="realestate">
-          <div class="text-4xl mb-3">🏠</div>
-          <h4 class="text-lg font-bold text-white mb-1">SpaceHarmony</h4>
-          <p class="text-teal-200 text-sm">Upload a room photo — get lighting, furniture, and color recommendations.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/junksnap-landing/" target="_blank" class="card block bg-gradient-to-br from-orange-600 to-orange-800 rounded-2xl p-6 border border-orange-500/30" data-category="realestate">
-          <div class="text-4xl mb-3">🚛</div>
-          <h4 class="text-lg font-bold text-white mb-1">JunkSnap AI</h4>
-          <p class="text-orange-200 text-sm">Photo estimates and invoicing for junk removal jobs.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/naturalistpro-landing/" target="_blank" class="card block bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-6 border border-green-500/30" data-category="nature">
-          <div class="text-4xl mb-3">🔬</div>
-          <h4 class="text-lg font-bold text-white mb-1">NaturalistPro</h4>
-          <p class="text-green-200 text-sm">Research-grade species identification — flora, fauna, fungi.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/plantnostic-landing/" target="_blank" class="card block bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-6 border border-green-500/30" data-category="nature">
-          <div class="text-4xl mb-3">🌿</div>
-          <h4 class="text-lg font-bold text-white mb-1">PlantNostic</h4>
-          <p class="text-green-200 text-sm">Identify species, diagnose diseases, get care plans — one photo.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/wildsenseai-landing/" target="_blank" class="card block bg-gradient-to-br from-amber-600 to-amber-800 rounded-2xl p-6 border border-amber-500/30" data-category="nature">
-          <div class="text-4xl mb-3">🐾</div>
-          <h4 class="text-lg font-bold text-white mb-1">WildSenseAI</h4>
-          <p class="text-amber-200 text-sm">Breed ID, nutrition plans, and health analysis for pets and animals.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/subtextai-landing/" target="_blank" class="card block bg-gradient-to-br from-rose-600 to-rose-800 rounded-2xl p-6 border border-rose-500/30" data-category="detection">
-          <div class="text-4xl mb-3">🎭</div>
-          <h4 class="text-lg font-bold text-white mb-1">SubtextAI</h4>
-          <p class="text-rose-200 text-sm">Decode hidden manipulation — gaslighting, toxic patterns, red flags.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/gamemaster-ai-landing/" target="_blank" class="card block bg-gradient-to-br from-violet-600 to-violet-800 rounded-2xl p-6 border border-violet-500/30" data-category="detection">
-          <div class="text-4xl mb-3">🎮</div>
-          <h4 class="text-lg font-bold text-white mb-1">GameMaster AI</h4>
-          <p class="text-violet-200 text-sm">Real-time tactical analysis for any game — FPS, fighting, MOBA.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/tonguetip-ai/" target="_blank" class="card block bg-gradient-to-br from-cyan-600 to-cyan-800 rounded-2xl p-6 border border-cyan-500/30" data-category="utility">
-          <div class="text-4xl mb-3">💭</div>
-          <h4 class="text-lg font-bold text-white mb-1">TongueTip AI</h4>
-          <p class="text-cyan-200 text-sm">"It's on the tip of my tongue" — describe anything, AI finds it.</p>
-        </a>
-
-        <a href="https://johnnytays.github.io/gardengenius-landing/" target="_blank" class="card block bg-gradient-to-br from-green-600 to-green-800 rounded-2xl p-6 border border-green-500/30" data-category="utility">
-          <div class="text-4xl mb-3">🌱</div>
-          <h4 class="text-lg font-bold text-white mb-1">GardenGenius</h4>
-          <p class="text-green-200 text-sm">Upload a garden photo — get scientific planting schedules.</p>
-        </a>
-
-        <a href="https://adenosense.pages.dev/" target="_blank" class="card block bg-gradient-to-br from-emerald-600 to-cyan-800 rounded-2xl p-6 border border-emerald-500/30" data-category="utility">
-          <div class="text-4xl mb-3">🧬</div>
-          <h4 class="text-lg font-bold text-white mb-1">AdenoSense</h4>
-          <p class="text-emerald-200 text-sm">Circadian optimization — energy, focus, and recovery tracking.</p>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Email Signup -->
-  <section id="get-access" class="py-16 px-4">
-    <div class="max-w-md mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-3">Get in.</h2>
-      <p class="text-slate-400 mb-2">25,000 people found these tools in one day. Now they're locked.</p>
-      <p class="text-slate-400 mb-6">Drop your email — you'll be first when we open.</p>
-      <form action="https://formsubmit.co/lamarandre@gmail.com" method="POST" class="flex gap-3">
-        <input type="hidden" name="_subject" value="JohnnyTays Access Request">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="https://johnnytays.github.io/johnnytays-directory/thanks.html">
-        <input type="email" name="email" required class="form-input flex-1 rounded-lg px-4 py-3 text-white placeholder-slate-500" placeholder="your@email.com">
-        <button type="submit" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-6 py-3 rounded-lg text-lg transition whitespace-nowrap">
-          Get Access
-        </button>
+        <div class="fg">
+          <label for="interest">Which tool were you trying to use?</label>
+          <select name="interest" id="interest">
+            <option value="">Select a tool</option>
+            <option value="Product Architect">Product Architect</option>
+            <option value="SynapticCore">SynapticCore</option>
+            <option value="FlipGenius">FlipGenius</option>
+            <option value="FixGenius">FixGenius</option>
+            <option value="SEO Genius Pro">SEO Genius Pro</option>
+            <option value="CaterCalc">CaterCalc</option>
+            <option value="FlipSnap">FlipSnap</option>
+            <option value="PromptGenie">PromptGenie</option>
+            <option value="Polaris Insight">Polaris Insight</option>
+            <option value="Life Optimizer">Life Optimizer</option>
+            <option value="Market Intelligence">Market Intelligence</option>
+            <option value="Love Hate Test">Love Hate Test</option>
+            <option value="IronVault">IronVault</option>
+            <option value="TableSync">TableSync</option>
+            <option value="Other">Other (I'll describe below)</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label for="feedback">What were you trying to do?</label>
+          <textarea name="feedback" id="feedback" placeholder="I was trying to..." rows="2"></textarea>
+        </div>
+        <button type="submit" class="btn">Get Early Access →</button>
       </form>
-      <p class="text-slate-600 text-xs mt-4">No spam. No selling your email. Just access.</p>
+      <div class="success" id="successMsg">
+        <h2>You're on the list.</h2>
+        <p>We'll let you know the moment your tool goes live. Scroll down to see all 120 tools — and share this with someone who'd use it.</p>
+      </div>
     </div>
-  </section>
 
-  <footer class="py-6 px-4 bg-slate-900 border-t border-slate-800">
-    <div class="max-w-7xl mx-auto text-center text-slate-500 text-sm">
-      <p>🚀 JohnnyTays — 41 AI-powered tools</p>
+    <div class="share-section">
+      <p>Know someone who'd use this? Share the link.</p>
+      <button class="share-btn" onclick="copyLink()">📋 Copy link</button>
     </div>
-  </footer>
 
-  <script>
-    function filterCategory(category) {
-      const cards = document.querySelectorAll('.card');
-      const buttons = document.querySelectorAll('.category-btn');
-      buttons.forEach(btn => {
-        btn.classList.remove('bg-indigo-500/20', 'border-indigo-500/50', 'text-indigo-300');
-        btn.classList.add('bg-slate-800', 'border-slate-700', 'text-slate-400');
-      });
-      event.target.classList.remove('bg-slate-800', 'border-slate-700', 'text-slate-400');
-      event.target.classList.add('bg-indigo-500/20', 'border-indigo-500/50', 'text-indigo-300');
-      cards.forEach(card => {
-        card.style.display = (category === 'all' || card.dataset.category === category) ? 'block' : 'none';
-      });
-    }
-  </script>
+    <div class="coffee-section">
+      <a href="https://buymeacoffee.com/lamarandre" target="_blank" class="coffee-btn">🎂 It's my birthday on June 6.<br>Buy me a coffee? ☕</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== DIRECTORY ========== -->
+<section class="directory" id="tools">
+  <div class="dir-header">
+    <h2>120 AI tools. Here's what's coming.</h2>
+    <p>Click any tool to see its landing page. <span style="color:var(--accent)">Cyan</span> = live preview. <span style="color:var(--warn)">Orange</span> = launching June 6.</p>
+  </div>
+  <div class="dir-grid" id="appGrid"></div>
+</section>
+
+<script>
+// Auto-detect which app they came from
+document.getElementById('appName').value = window.location.hostname;
+document.getElementById('signupDate').value = new Date().toISOString();
+
+// App data
+const APPS = [
+  {name:"Product Architect",icon:"🏗️",desc:"AI-powered product strategy in 60 seconds",url:"https://johnnytays.github.io/product-architect-landing/",live:false},
+  {name:"SynapticCore",icon:"🧠",desc:"Your AI business brain — always on",url:"https://synapticcore-v2.vercel.app",live:true},
+  {name:"FlipGenius",icon:"🔄",desc:"Find, analyze, and flip products for profit",url:"https://johnnytays.github.io/flipgenius-landing/",live:false},
+  {name:"FixGenius",icon:"🔧",desc:"AI diagnosis for home, auto, and tech repairs",url:"https://johnnytays.github.io/fixgenius-landing/",live:false},
+  {name:"SEO Genius Pro",icon:"📊",desc:"Dominate search with AI-powered SEO analysis",url:"https://johnnytays.github.io/seo-genius-pro-landing/",live:false},
+  {name:"CaterCalc",icon:"🍽️",desc:"Catering math, menus, and margins in seconds",url:"https://johnnytays.github.io/catercalc-landing/",live:false},
+  {name:"FlipSnap",icon:"📸",desc:"Snap a photo, get an instant flip analysis",url:"https://johnnytays.github.io/flipsnap-landing/",live:false},
+  {name:"PromptGenie",icon:"🧞",desc:"Generate perfect prompts for any AI model",url:"https://johnnytays.github.io/promptgenie-landing/",live:false},
+  {name:"Polaris Insight",icon:"🧭",desc:"Strategic compass for business decisions",url:"https://johnnytays.github.io/polaris-insight-landing/",live:false},
+  {name:"Life Optimizer",icon:"⚡",desc:"Optimize your routines, habits, and time",url:"https://johnnytays.github.io/life-optimizer-landing/",live:false},
+  {name:"EBOMP",icon:"📈",desc:"Enterprise business optimization & market positioning",url:"https://johnnytays.github.io/ebomp-landing/",live:false},
+  {name:"Executive Intelligence",icon:"👔",desc:"AI strategic advisor for executives",url:"https://johnnytays.github.io/executive-intelligence-landing/",live:false},
+  {name:"VisionIQ Pro",icon:"👁️",desc:"Computer vision analysis for business",url:"https://johnnytays.github.io/visioniq-pro-landing/",live:false},
+  {name:"Quantum Flip",icon:"🎲",desc:"Probability-driven flip and resale analysis",url:"https://johnnytays.github.io/quantum-flip-landing/",live:false},
+  {name:"SocialGenius Pro",icon:"📱",desc:"AI social media strategy and content engine",url:"https://johnnytays.github.io/socialgenius-pro-landing/",live:false},
+  {name:"YouTube Growth Pro",icon:"▶️",desc:"AI-powered YouTube channel optimization",url:"https://johnnytays.github.io/youtube-growth-pro-landing/",live:false},
+  {name:"LifeFlow Dynamics",icon:"🌊",desc:"Flow state optimization and deep work scheduling",url:"https://johnnytays.github.io/lifeflow-dynamics-landing/",live:false},
+  {name:"Adaptive Task",icon:"✅",desc:"AI task prioritization that learns your workflow",url:"https://johnnytays.github.io/adaptive-task-landing/",live:false},
+  {name:"AI Magic",icon:"✨",desc:"Creative AI tools for content and design",url:"https://johnnytays.github.io/aimagic-landing/",live:false},
+  {name:"SkillHacker",icon:"🎓",desc:"Accelerated skill acquisition with AI tutoring",url:"https://johnnytays.github.io/skillhacker-landing/",live:false},
+  {name:"PropTech Intelligence",icon:"🏠",desc:"AI real estate and property analysis",url:"https://johnnytays.github.io/proptech-intelligence-landing/",live:false},
+  {name:"Pipeline Genesis",icon:"🔗",desc:"AI sales pipeline generation and optimization",url:"https://johnnytays.github.io/pipeline-genesis-landing/",live:false},
+  {name:"Fitness Business Optimizer",icon:"💪",desc:"Gym and studio business intelligence",url:"https://johnnytays.github.io/fitness-business-optimizer-landing/",live:false},
+  {name:"Re-Marketing Diagnostician",icon:"🎯",desc:"AI ad performance diagnosis and optimization",url:"https://johnnytays.github.io/re-marketing-diagnostician-landing/",live:false},
+  {name:"LifePath Universal",icon:"🛤️",desc:"Life planning and decision framework",url:"https://johnnytays.github.io/lifepath-universal-landing/",live:false},
+  {name:"LoveSync Intelligence",icon:"❤️",desc:"Relationship compatibility and communication AI",url:"https://johnnytays.github.io/lovesync-intelligence-landing/",live:false},
+  {name:"Dating Intelligence Engine",icon:"💑",desc:"AI dating strategy and profile optimization",url:"https://johnnytays.github.io/dating-intelligence-engine-landing/",live:false},
+  {name:"VitalityAI",icon:"🏃",desc:"Health optimization and longevity tracking",url:"https://johnnytays.github.io/vitalityai-landing/",live:false},
+  {name:"Cognitive Learning",icon:"📚",desc:"AI-enhanced learning and retention system",url:"https://johnnytays.github.io/cognitive-learning-landing/",live:false},
+  {name:"CalCalc AI",icon:"🔢",desc:"AI calorie and nutrition calculation engine",url:"https://johnnytays.github.io/calcalc-ai-landing/",live:false},
+  {name:"ClarityScan AI",icon:"🔍",desc:"Business clarity and decision analysis",url:"https://johnnytays.github.io/clarityscan-ai-landing/",live:false},
+  {name:"SpaceHarmony",icon:"🏡",desc:"AI interior design and space optimization",url:"https://johnnytays.github.io/spaceharmony-landing/",live:false},
+  {name:"JunkSnap",icon:"📦",desc:"Snap it, price it, sell it — decluttering AI",url:"https://johnnytays.github.io/junksnap-landing/",live:false},
+  {name:"NaturalistPro",icon:"🌿",desc:"AI nature identification and field guide",url:"https://johnnytays.github.io/naturalistpro-landing/",live:false},
+  {name:"Plantnostic",icon:"🌱",desc:"AI plant care, diagnosis, and gardening",url:"https://johnnytays.github.io/plantnostic-landing/",live:false},
+  {name:"WildSenseAI",icon:"🦅",desc:"Wildlife tracking and ecosystem analysis",url:"https://johnnytays.github.io/wildsenseai-landing/",live:false},
+  {name:"SubTextAI",icon:"💬",desc:"Hidden meaning and subtext analysis",url:"https://johnnytays.github.io/subtextai-landing/",live:false},
+  {name:"GameMaster AI",icon:"🎮",desc:"AI game master for RPGs and strategy games",url:"https://johnnytays.github.io/gamemaster-ai-landing/",live:false},
+  {name:"TongueTip AI",icon:"👅",desc:"AI culinary discovery and recipe intelligence",url:"https://johnnytays.github.io/tonguetip-ai/",live:false},
+  {name:"GardenGenius",icon:"🌻",desc:"AI garden planning and plant management",url:"https://johnnytays.github.io/gardengenius-landing/",live:false},
+  {name:"AdenoSense",icon:"🔬",desc:"AI health data analysis and insights",url:"https://adenosense.pages.dev/",live:false},
+];
+
+// Render app grid
+const grid = document.getElementById('appGrid');
+APPS.forEach(app => {
+  const card = document.createElement('a');
+  card.href = app.url;
+  card.target = '_blank';
+  card.className = 'app-card';
+  card.innerHTML = `
+    <div class="app-icon">${app.icon}</div>
+    <h3>${app.name}</h3>
+    <p>${app.desc}</p>
+    <span class="tag ${app.live ? 'tag-live' : 'tag-launch'}">${app.live ? 'Live preview' : 'Launching June 6'}</span>
+  `;
+  grid.appendChild(card);
+});
+
+// Form submission — FormSubmit + Systeme.io proxy
+const form = document.getElementById('signupForm');
+const successMsg = document.getElementById('successMsg');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const email = document.getElementById('email').value;
+  const interest = document.getElementById('interest').value;
+  const feedback = document.getElementById('feedback').value;
+  const appName = document.getElementById('appName').value;
+
+  // 1. Systeme.io via server-side proxy (keeps API key safe)
+  fetch('/api/signup', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({email: email, interest: interest, feedback: feedback, app_name: appName, source: 'funnel_page', signup_date: new Date().toISOString()})
+  }).catch(() => {});
+
+  // 2. FormSubmit as backup (always sends email notification)
+  const formData = new FormData(form);
+  formData.append('_subject', 'June 6 Launch — Funnel Signup');
+  formData.append('_captcha', 'false');
+  formData.append('_template', 'table');
+  fetch('https://formsubmit.co/ajax/lamarandre@gmail.com', {
+    method: 'POST',
+    body: formData,
+    headers: {'Accept': 'application/json'}
+  }).catch(() => {});
+
+  // 3. Show success
+  form.style.display = 'none';
+  document.querySelector('.form-h').style.display = 'none';
+  document.querySelector('.form-sub').style.display = 'none';
+  successMsg.style.display = 'block';
+});
+
+// Countdown
+const launchDate = new Date('2026-06-06T00:00:00-07:00').getTime();
+function updateCountdown() {
+  const diff = launchDate - Date.now();
+  if (diff <= 0) { document.getElementById('countdown').innerHTML = '<div style="color:var(--accent);font-size:22px;font-weight:800">WE\'RE LIVE 🎂</div>'; return; }
+  document.getElementById('days').textContent = String(Math.floor(diff/86400000)).padStart(2,'0');
+  document.getElementById('hours').textContent = String(Math.floor((diff%86400000)/3600000)).padStart(2,'0');
+  document.getElementById('minutes').textContent = String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
+  document.getElementById('seconds').textContent = String(Math.floor((diff%60000)/1000)).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+function copyLink() {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    const btn = document.querySelector('.share-btn');
+    btn.innerHTML = '✅ Copied!';
+    setTimeout(() => { btn.innerHTML = '📋 Copy link'; }, 2000);
+  });
+}
+</script>
+
 </body>
 </html>
